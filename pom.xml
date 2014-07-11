@@ -6,6 +6,7 @@
 
     <groupId>com.portaldc</groupId>
     <artifactId>portalDC</artifactId>
+    <packaging>war</packaging>
     <version>0.1</version>
 
     <dependencies>
