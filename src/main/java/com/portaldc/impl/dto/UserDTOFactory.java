@@ -11,7 +11,7 @@ public class UserDTOFactory
 	{
 		
 		UserDTO dto = new UserDTO();
-		dto.setLogin(user.getLogin());
+		dto.setLogin(user.getUsername());
 		dto.setPassword(user.getPassword());
 		
 		return dto;
@@ -22,7 +22,7 @@ public class UserDTOFactory
 	{
 		
 		User model = new User();
-		model.setLogin(dto.getLogin());
+		model.setUserName(dto.getLogin());
 		model.setPassword(dto.getPassword());
 		
 		return model;

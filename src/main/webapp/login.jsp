@@ -56,7 +56,12 @@ body {
 	border-top-right-radius: 0;
 }
 </style>
-
+    <!--DONT WORK -->
+<script type="text/javascript">
+    $("button_register").click(function(){
+        window.location.href = "register.jsp";
+    });
+</script>
 </head>
 <body>
 	<div class="container">
@@ -68,10 +73,14 @@ body {
 				placeholder="<spring:message code="page_login.login"/>" autofocus name="j_username">
 			<input type="password" class="form-control"
 				placeholder="<spring:message code="page_login.password"/>" name="j_password">
-			<button class="btn btn-lg btn-primary btn-block" type="button"
+			<button class="btn btn-lg btn-primary btn-block"
 				id="button_login" type="submit" name="submit">
 				<spring:message code="page_login.enter_button" />
 			</button>
+            <button class="btn btn-lg btn-primary btn-block" type="button"
+                    id="button_register" name="register">
+                <spring:message code="register_page.register" />
+            </button>
 		</form>
 	</div>
 </body>
