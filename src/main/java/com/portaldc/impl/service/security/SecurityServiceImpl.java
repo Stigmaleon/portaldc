@@ -11,7 +11,8 @@ import org.springframework.stereotype.Service;
 @Service
 public class SecurityServiceImpl implements UserDetailsService {
 
-    private UserDAO userDAO = new UserDAOImpl();
+    @Autowired
+    private UserDAO userDAO;
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
