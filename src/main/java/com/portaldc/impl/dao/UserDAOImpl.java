@@ -27,10 +27,10 @@ public class UserDAOImpl implements UserDAO
 	
 	@Override
     @Transactional
-	public User getUser(String userName)
+	public User getUser(String login)
 	{
 		// TODO rewrite
-		Query query = sessionFactory.getCurrentSession().getNamedQuery("currentUser").setString("login", userName);
+		Query query = sessionFactory.getCurrentSession().getNamedQuery("currentUser").setString("login", login);
 		List<User> users = query.list();
 		User user = users.get(0);
 		return user;
