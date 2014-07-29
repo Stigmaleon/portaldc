@@ -12,6 +12,8 @@
 
 	<context:component-scan base-package="com.portaldc.api.dao" />
 	<context:component-scan base-package="com.portaldc.api.service" />
+	<context:component-scan base-package="com.portaldc.impl.dao"/>
+	<context:component-scan base-package="com.portaldc.impl.service"/>
 
 	<import resource="data.xml" />
 
