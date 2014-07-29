@@ -15,7 +15,7 @@ public class Role extends Identificator{
 	@Column(name = "name", nullable = false, unique = true)
 	private String name;
 
-	@ManyToMany(fetch = FetchType.LAZY, mappedBy = "roles")
+	@ManyToMany(fetch = FetchType.EAGER, mappedBy = "roles")
 	private List<User> users;
 
 	public String getName() {
