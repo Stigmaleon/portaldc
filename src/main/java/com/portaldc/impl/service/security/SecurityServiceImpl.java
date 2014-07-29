@@ -22,7 +22,11 @@ public class SecurityServiceImpl implements UserDetailsService {
         user = userDAO.getUser(username);
 
         System.out.println("TEST");
-        return user;
+        return prepareUser(user);
+    }
+    
+    private UserDetails prepareUser(User user){
+    	return null;
     }
 
 }
