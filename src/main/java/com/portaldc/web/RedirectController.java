@@ -21,6 +21,11 @@ public class RedirectController{
     public String home(){
         return "home";
     }
+    
+    @RequestMapping(value = "/register", method = RequestMethod.GET)
+    public String register(){
+    	return "register";
+    }
 
     
 }

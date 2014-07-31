@@ -7,7 +7,7 @@
 
 <link href="/resources/css/bootstrap.css" rel="stylesheet">
 <link href="/resources/css/global.css" rel="stylesheet">
-<script src="/resources/js/jquery-2.0.3.js"></script>
+<script src="/resources/js/jquery.js"></script>
 
 <style type="text/css">
 body {

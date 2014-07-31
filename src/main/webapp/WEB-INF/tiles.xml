@@ -14,4 +14,8 @@
     <definition name="home" extends="baseLayout">
         <put-attribute name="body" value="/WEB-INF/views/jsp/home.jsp"/>
     </definition>
+    
+    <definition name="register" extends="baseLayout">
+    	<put-attribute name="body" value="/WEB-INF/views/jsp/register.jsp"/>
+    </definition>
 </tiles-definitions>
