@@ -4,8 +4,8 @@
 
 <hibernate-configuration>
 	<session-factory>
-		<mapping class="com.portaldc.api.model.User" />
-		<mapping class="com.portaldc.api.model.Role" />
+		<mapping class="com.portaldc.api.model.user.User" />
+		<mapping class="com.portaldc.api.model.role.Role" />
 		
 	</session-factory>
 </hibernate-configuration>
