@@ -1,7 +1,7 @@
-package com.portaldc.impl.dto;
+package com.portaldc.impl.dto.user;
 
-import com.portaldc.api.dto.UserDTO;
-import com.portaldc.api.model.User;
+import com.portaldc.api.dto.user.UserDTO;
+import com.portaldc.api.model.user.User;
 
 
 public class UserDTOFactory
@@ -13,6 +13,7 @@ public class UserDTOFactory
 		UserDTO dto = new UserDTO();
 		dto.setLogin(user.getLogin());
 		dto.setPassword(user.getPassword());
+		dto.setEmail(user.getEmail());
 		
 		return dto;
 		
@@ -24,6 +25,7 @@ public class UserDTOFactory
 		User model = new User();
 		model.setLogin(dto.getLogin());
 		model.setPassword(dto.getPassword());
+		model.setEmail(dto.getEmail());
 		
 		return model;
 		

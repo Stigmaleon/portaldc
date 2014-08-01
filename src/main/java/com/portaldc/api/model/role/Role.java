@@ -1,4 +1,4 @@
-package com.portaldc.api.model;
+package com.portaldc.api.model.role;
 
 import java.util.List;
 
@@ -7,6 +7,9 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
+
+import com.portaldc.api.model.Identificator;
+import com.portaldc.api.model.user.User;
 
 @Entity
 @Table(name = "role")

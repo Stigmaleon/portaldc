@@ -1,4 +1,4 @@
-package com.portaldc.api.model;
+package com.portaldc.api.model.user;
 
 import java.util.List;
 
@@ -12,6 +12,9 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
+import com.portaldc.api.model.Identificator;
+import com.portaldc.api.model.role.Role;
+
 @Entity
 @Table(name = "user")
 @NamedQueries({ @NamedQuery(name = "currentUser", query = "from User u where u.login = :login") })
@@ -21,6 +24,8 @@ public class User extends Identificator {
 	private String login;
 	@Column(name = "password")
 	private String password;
+	@Column(name = "email")
+	private String email;
 	
 	@ManyToMany(fetch = FetchType.EAGER)
 	@JoinTable(
@@ -43,6 +48,14 @@ public class User extends Identificator {
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+	
+	public String getEmail() {
+		return email;
+	}
+	
+	public void setEmail(String email) {
+		this.email = email;
 	}
 	
 	public List<Role> getRoles() {

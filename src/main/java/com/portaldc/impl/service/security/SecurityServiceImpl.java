@@ -1,9 +1,9 @@
 package com.portaldc.impl.service.security;
 
-import com.portaldc.api.dao.UserDAO;
-import com.portaldc.api.model.Role;
-import com.portaldc.api.model.User;
+import com.portaldc.api.dao.user.UserDAO;
+import com.portaldc.api.model.role.Role;
 import com.portaldc.api.model.security.SysUserDetails;
+import com.portaldc.api.model.user.User;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;

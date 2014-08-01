@@ -1,6 +1,6 @@
-package com.portaldc.api.dao;
+package com.portaldc.api.dao.user;
 
-import com.portaldc.api.model.User;
+import com.portaldc.api.model.user.User;
 
 public interface UserDAO
 {

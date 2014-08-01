@@ -1,16 +1,15 @@
-package com.portaldc.impl.dao;
+package com.portaldc.impl.dao.user;
 
 import java.util.List;
 
 import org.hibernate.Query;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.portaldc.api.dao.UserDAO;
-import com.portaldc.api.model.User;
+import com.portaldc.api.dao.user.UserDAO;
+import com.portaldc.api.model.user.User;
 
 @Repository
 public class UserDAOImpl implements UserDAO
