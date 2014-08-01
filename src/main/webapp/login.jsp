@@ -71,9 +71,9 @@ $(function(){
 				<spring:message code="page_login.info" />
 			</h3>
 			<input type="text" class="form-control"
-				placeholder="<spring:message code="page_login.login"/>" autofocus name="j_username">
+				placeholder="<spring:message code="main.login"/>" autofocus name="j_username">
 			<input type="password" class="form-control"
-				placeholder="<spring:message code="page_login.password"/>" name="j_password">
+				placeholder="<spring:message code="main.password"/>" name="j_password">
 			<button class="btn btn-lg btn-primary btn-block"
 				id="button_login" type="submit" name="submit">
 				<spring:message code="page_login.enter_button" />
