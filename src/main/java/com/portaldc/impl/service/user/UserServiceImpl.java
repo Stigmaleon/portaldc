@@ -17,12 +17,12 @@ public class UserServiceImpl implements UserService {
 	UserDTOFactory userFactory = new UserDTOFactory();
 
 	@Override
-	public void saveNewUser(UserDTO userDTO) {
+	public UserDTO saveNewUser(UserDTO userDTO) {
 		
 		User user = new User();
 		user = userFactory.createModel(userDTO);
 		userDAO.addUser(user);
-		
+		return userFactory.createDTO(user);
 	}
 
 }

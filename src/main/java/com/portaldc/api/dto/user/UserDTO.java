@@ -1,7 +1,11 @@
 package com.portaldc.api.dto.user;
 
-public class UserDTO
+import java.io.Serializable;
+
+public class UserDTO implements Serializable
 {
+	
+	private static final long serialVersionUID = 1L;
 	
 	private String	login;
 	private String	password;
@@ -35,4 +39,8 @@ public class UserDTO
 		this.email = email;
 	}
 	
+	@Override
+	public String toString() {		
+		return "Login: " + login + "; email: " + email + "; password: " + password;
+	}
 }

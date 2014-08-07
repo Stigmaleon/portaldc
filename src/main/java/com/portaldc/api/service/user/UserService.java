@@ -4,5 +4,5 @@ import com.portaldc.api.dto.user.UserDTO;
 
 public interface UserService
 {
-	public void saveNewUser(UserDTO userDTO);
+	public UserDTO saveNewUser(UserDTO userDTO);
 }

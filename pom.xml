@@ -57,6 +57,11 @@
             <artifactId>spring-security-core</artifactId>
             <version>${org.springframework-version}</version>
         </dependency>
+        <dependency>
+        	<groupId>org.springframework.webflow</groupId>
+			<artifactId>spring-js</artifactId>
+			<version>2.4.0.RELEASE</version>
+        </dependency>
 
 
         <!-- AspectJ -->
@@ -198,6 +203,12 @@
             <artifactId>tiles-template</artifactId>
             <version>2.2.2</version>
         </dependency>
+        
+        <dependency>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-mapper-asl</artifactId>
+			<version>1.9.9</version>
+		</dependency>
 
 
 

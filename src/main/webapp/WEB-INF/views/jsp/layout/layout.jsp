@@ -10,6 +10,7 @@
 	<link href="resources/css/bootstrap.css" rel="stylesheet">
 	<link href="resources/css/global.css" rel="stylesheet">
 	<script src="resources/js/jquery.js"></script>
+	<script src="resources/js/bootstrap.js"></script>
 
     <title><tiles:insertAttribute name="title" ignore="true"/></title>
 </head>
