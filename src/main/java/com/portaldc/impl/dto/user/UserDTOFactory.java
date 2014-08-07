@@ -14,6 +14,7 @@ public class UserDTOFactory
 		dto.setLogin(user.getLogin());
 		dto.setPassword(user.getPassword());
 		dto.setEmail(user.getEmail());
+		dto.setRoles(user.getRoles());
 		
 		return dto;
 		
@@ -26,6 +27,7 @@ public class UserDTOFactory
 		model.setLogin(dto.getLogin());
 		model.setPassword(dto.getPassword());
 		model.setEmail(dto.getEmail());
+		model.setRoles(dto.getRoles());
 		
 		return model;
 		

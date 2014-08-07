@@ -1,6 +1,9 @@
 package com.portaldc.api.dto.user;
 
 import java.io.Serializable;
+import java.util.List;
+
+import com.portaldc.api.model.role.Role;
 
 public class UserDTO implements Serializable
 {
@@ -10,6 +13,7 @@ public class UserDTO implements Serializable
 	private String	login;
 	private String	password;
 	private String	email;
+	private List<Role> roles;
 	
 	public String getLogin()
 	{
@@ -39,8 +43,12 @@ public class UserDTO implements Serializable
 		this.email = email;
 	}
 	
-	@Override
-	public String toString() {		
-		return "Login: " + login + "; email: " + email + "; password: " + password;
+	public List<Role> getRoles() {
+		return roles;
 	}
+	
+	public void setRoles(List<Role> roles) {
+		this.roles = roles;
+	}
+	
 }

@@ -12,6 +12,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class SecurityServiceImpl implements UserDetailsService {
@@ -20,13 +21,12 @@ public class SecurityServiceImpl implements UserDetailsService {
 	private UserDAO userDAO;
 
 	@Override
+	@Transactional
 	public UserDetails loadUserByUsername(String username)
 			throws UsernameNotFoundException {
 		User user = new User();
 
 		user = userDAO.getUser(username);
-
-		System.out.println("TEST");
 		return prepareUser(user);
 	}
 

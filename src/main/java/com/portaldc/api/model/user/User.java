@@ -10,23 +10,30 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
+import org.codehaus.jackson.annotate.JsonIgnore;
 
 import com.portaldc.api.model.Identificator;
 import com.portaldc.api.model.role.Role;
 
 @Entity
 @Table(name = "user")
-@NamedQueries({ @NamedQuery(name = "currentUser", query = "from User u where u.login = :login") })
+@NamedQueries({ @NamedQuery(
+					name = "currentUser", 
+					query = "from User u where u.login = :login")})
 public class User extends Identificator {
 
-	@Column(name = "login")
+	@Column(name = "login", unique=true, nullable = false)
 	private String login;
 	@Column(name = "password")
 	private String password;
 	@Column(name = "email")
 	private String email;
 	
+	@JsonIgnore
 	@ManyToMany(fetch = FetchType.EAGER)
 	@JoinTable(
 			name = "user_role",

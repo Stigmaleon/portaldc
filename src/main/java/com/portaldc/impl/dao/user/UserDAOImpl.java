@@ -18,20 +18,17 @@ public class UserDAOImpl implements UserDAO
 	private SessionFactory	sessionFactory;
 	
 	@Override
-	@Transactional
 	public void addUser(User user)
 	{
 		sessionFactory.getCurrentSession().save(user);
 	}
 	
 	@Override
-    @Transactional
 	public User getUser(String login)
 	{
 		// TODO rewrite
-		Query query = sessionFactory.getCurrentSession().getNamedQuery("currentUser").setString("login", login);
-		List<User> users = query.list();
-		User user = users.get(0);
-		return user;
+		Query query = sessionFactory.getCurrentSession().getNamedQuery("currentUser");		
+		query.setParameter("login", login);
+		return (User) query.uniqueResult();
 	}
 }

@@ -8,6 +8,8 @@ import javax.persistence.FetchType;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
+import org.codehaus.jackson.annotate.JsonIgnore;
+
 import com.portaldc.api.model.Identificator;
 import com.portaldc.api.model.user.User;
 
@@ -18,6 +20,7 @@ public class Role extends Identificator{
 	@Column(name = "name", nullable = false, unique = true)
 	private String name;
 
+	@JsonIgnore
 	@ManyToMany(fetch = FetchType.EAGER, mappedBy = "roles")
 	private List<User> users;
 
