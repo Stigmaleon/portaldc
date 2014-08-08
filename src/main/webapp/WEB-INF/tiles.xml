@@ -17,6 +17,7 @@
     </definition>
     
     <definition name="register" extends="baseLayout">
+    	<put-attribute name="header" value="" />
     	<put-attribute name="menu" value="" />
     	<put-attribute name="body" value="/WEB-INF/views/jsp/register.jsp"/>
     </definition>

@@ -26,9 +26,10 @@ body{
 }
 
 .register_form{
+	
 	height: auto;
 	max-width: 400px;
-	margin: 10px auto 10px auto;
+	margin: 100px auto 10px auto;
 }	
 
 .register_form input{
