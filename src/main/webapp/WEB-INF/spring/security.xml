@@ -8,6 +8,7 @@
 	
 	<http security="none" pattern="/login.jsp"/>
 	<http security="none" pattern="/register"/>
+    <http security="none" pattern="/user/register"/>
 	<http security="none" pattern="/resources/**"/>
 	<http access-denied-page="/error403.jsp">		
 		<intercept-url pattern="/**" access="ROLE_USER, ROLE_ADMIN" />

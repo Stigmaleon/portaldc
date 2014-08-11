@@ -31,6 +31,7 @@ $(function(){
 			url: "user/register",
 			success: function(response) {
 				console.log(response);
+                window.location.href = "login.jsp";
 			}
 		});
 		
