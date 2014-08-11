@@ -11,14 +11,18 @@
         <put-attribute name="body" value=""/>
         <put-attribute name="footer" value="/WEB-INF/views/jsp/layout/footer.jsp"/>
     </definition>
+    
+        <definition name="register" extends="baseLayout">
+    	<put-attribute name="header" value="" />
+    	<put-attribute name="menu" value="" />
+    	<put-attribute name="body" value="/WEB-INF/views/jsp/register.jsp"/>
+    </definition>
 
     <definition name="home" extends="baseLayout">
         <put-attribute name="body" value="/WEB-INF/views/jsp/home.jsp"/>
     </definition>
     
-    <definition name="register" extends="baseLayout">
-    	<put-attribute name="header" value="" />
-    	<put-attribute name="menu" value="" />
-    	<put-attribute name="body" value="/WEB-INF/views/jsp/register.jsp"/>
-    </definition>
+	<definition name="createDistribution" extends="baseLayout">
+		<put-attribute name="body" value="/WEB-INF/views/jsp/distribution/createDistribution.jsp" />
+	</definition>
 </tiles-definitions>

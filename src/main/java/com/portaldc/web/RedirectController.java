@@ -5,6 +5,7 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -20,6 +21,7 @@ public class RedirectController{
 	
 	private static final String HOME_PAGE = "home";
 	private static final String REGISTR_PAGE = "register";
+	private static final String CREATE_DISTRIBUTION_PAGE = "createDistribution";
 
     @RequestMapping(value = "/", method = {RequestMethod.GET, RequestMethod.POST})
     public String index(ModelMap modelMap) throws Exception{
@@ -58,6 +60,11 @@ public class RedirectController{
     public String register(){
     	return REGISTR_PAGE;
     }
-
+    
+    @Secured(value = "ROLE_USER")
+    @RequestMapping(value = "/create_distribution", method = RequestMethod.GET)
+    public String createDistribution(){
+    	return CREATE_DISTRIBUTION_PAGE;
+    }
     
 }

@@ -22,6 +22,10 @@ $(function(){
 	$("#logoutButton").click(function(){
 		window.location.href = "logout";
 	});
+	
+	$("#showSelectModal").click(function(){
+		$("#selectType").modal("show");
+	});
 });
 	
 </script>
@@ -37,10 +41,29 @@ $(function(){
 				<span class="caret"></span>
 			</button>
 			<ul class="dropdown-menu" role="menu">
-				<li><a href="create_distribution"><spring:message code="global_menu.create_distribution"/></a></li>
+				<li id="showSelectModal"><a><spring:message code="global_menu.create_distribution"/></a></li>
 				<li><a href="view_distributions"><spring:message code="global_menu.view_distributions"/></a></li>
 			</ul>
 		</div>
 		<button type="button" class="btn btn-primary" id="logoutButton"><spring:message code="global_menu.logout"/></button>
+	</div>
+</div>
+
+<div class="modal fade bs-example-modal-sm" id="selectType" tabindex="-1" role="dialog" aria-labelledby="selectTypeModal" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="model-content">
+			<div class="model-header">
+				<h4 class="modal-title" id="selectTypeModal"><spring:message code="distribution.select_type" /></h4>
+			</div>
+			<div class="modal-body">
+				<select class="form-control" id="modalSelectDistrType">
+					<option>FILM</option>
+					<option>AUDIo</option>
+				</select>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn" data-dismiss="modal"><spring:message code="global.close" /></button>
+			</div>
+		</div>
 	</div>
 </div>

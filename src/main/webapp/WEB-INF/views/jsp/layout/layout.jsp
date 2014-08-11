@@ -7,10 +7,10 @@
 "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-	<link href="resources/css/bootstrap.css" rel="stylesheet">
-	<link href="resources/css/global.css" rel="stylesheet">
+	<link href="resources/css/bootstrap.css" rel="stylesheet">	
 	<script src="resources/js/jquery.js"></script>
 	<script src="resources/js/bootstrap.js"></script>
+	<link href="resources/css/global.css" rel="stylesheet">
 
     <title><tiles:insertAttribute name="title" ignore="true"/></title>
 </head>
