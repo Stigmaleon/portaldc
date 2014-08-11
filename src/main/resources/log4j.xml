@@ -12,28 +12,28 @@
 	
 	<!-- Application Loggers -->
 	<logger name="com.portaldc.app">
-		<level value="debug" />
+		<level value="all" />
 	</logger>
 	
 	<!-- 3rdparty Loggers -->
 	<logger name="org.springframework.core">
-		<level value="debug" />
+		<level value="info" />
 	</logger>
 	
 	<logger name="org.springframework.beans">
-		<level value="debug" />
+		<level value="info" />
 	</logger>
 	
 	<logger name="org.springframework.context">
-		<level value="debug" />
+		<level value="info" />
 	</logger>
 
 	<logger name="org.springframework.web">
-		<level value="debug" />
+		<level value="info" />
 	</logger>
 	
 	<logger name="org.hibernate">
-		<level value="DEBUG"/>
+		<level value="all"/>
 	</logger>
 	<!-- Root Logger -->
 	<root>

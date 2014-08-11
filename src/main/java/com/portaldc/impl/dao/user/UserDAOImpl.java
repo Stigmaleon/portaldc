@@ -26,7 +26,6 @@ public class UserDAOImpl implements UserDAO
 	@Override
 	public User getUser(String login)
 	{
-		// TODO rewrite
 		Query query = sessionFactory.getCurrentSession().getNamedQuery("currentUser");		
 		query.setParameter("login", login);
 		return (User) query.uniqueResult();
