@@ -28,8 +28,8 @@ public class Distribution extends Identificator{
     private String description;
     @Column(name = "ganre")
     private String ganre;
-    @Column(name = "condition", nullable = false)
-    private String condition;
+    @Column(name = "state", nullable = false)
+    private String state;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "distribution")
     List<Link> links;
@@ -73,15 +73,15 @@ public class Distribution extends Identificator{
         this.ganre = ganre;
     }
 
-    public String getCondition() {
-        return condition;
-    }
+    public String getState() {
+		return state;
+	}
 
-    public void setCondition(String condition) {
-        this.condition = condition;
-    }
+	public void setState(String state) {
+		this.state = state;
+	}
 
-    public List<Link> getLinks() {
+	public List<Link> getLinks() {
         return links;
     }
 
