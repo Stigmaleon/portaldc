@@ -53,7 +53,7 @@ $(function(){
 	<button class="btn btn-primary btn-block register_button" id="registerButton">
 			<spring:message code="register_page.register" />
 	</button>
-	<button class="btn btn-primary btn-block register_button" id="loginButton">
+	<button class="btn btn-default btn-block register_button" id="loginButton">
 			<spring:message code="page_login.enter_button"/>
 	</button>
 	<div class="alert alert-warning fade in" role="alert" style="display:none;">

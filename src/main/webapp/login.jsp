@@ -78,7 +78,7 @@ $(function(){
 				id="button_login" type="submit" name="submit">
 				<spring:message code="page_login.enter_button" />
 			</button>
-            <button class="btn btn-lg btn-primary btn-block" type="button"
+            <button class="btn btn-lg btn-default btn-block" type="button"
                     id="button_register" name="register">
                 <spring:message code="register_page.register" />
             </button>
