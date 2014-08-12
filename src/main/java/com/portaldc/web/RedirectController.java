@@ -21,7 +21,6 @@ public class RedirectController{
 	
 	private static final String HOME_PAGE = "home";
 	private static final String REGISTR_PAGE = "register";
-	private static final String CREATE_DISTRIBUTION_PAGE = "createDistribution";
 
     @RequestMapping(value = "/", method = {RequestMethod.GET, RequestMethod.POST})
     public String index(ModelMap modelMap) throws Exception{
@@ -59,12 +58,6 @@ public class RedirectController{
     @RequestMapping(value = "/register", method = RequestMethod.GET)
     public String register(){
     	return REGISTR_PAGE;
-    }
-    
-    @Secured(value = "ROLE_USER")
-    @RequestMapping(value = "/create_distribution", method = RequestMethod.GET)
-    public String createDistribution(){
-    	return CREATE_DISTRIBUTION_PAGE;
     }
     
 }

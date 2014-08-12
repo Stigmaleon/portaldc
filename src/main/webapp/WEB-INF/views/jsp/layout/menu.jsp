@@ -10,6 +10,22 @@
 <script type="text/javascript">
 
 $(function(){
+
+    $.ajax({
+        type: "GET",
+        datatype: "json",
+        contentType: "application/json; charset=utf-8",
+        url: "getCategories",
+        success: function(response){
+            response.forEach(function(category){
+                $("#modalSelectDistrType")
+                        .append($("<option></option>")
+                        .attr("value", category.id)
+                        .text(category.name));
+            });
+
+        }
+    });
 	
 	$("#homeButton").click(function(){
 		window.location.href = "home";
@@ -26,6 +42,11 @@ $(function(){
 	$("#showSelectModal").click(function(){
 		$("#selectType").modal("show");
 	});
+
+    $("#modalSelectDistrType").click(function(){
+        if($(this).val() == 1)
+            window.location.href = "create_distribution_film";
+    });
 });
 	
 </script>
@@ -56,10 +77,7 @@ $(function(){
 				<h4 class="modal-title" id="selectTypeModal"><spring:message code="distribution.select_type" /></h4>
 			</div>
 			<div class="modal-body">
-				<select class="form-control" id="modalSelectDistrType">
-					<option>FILM</option>
-					<option>AUDIo</option>
-				</select>
+				<select class="form-control" id="modalSelectDistrType"></select>
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn" data-dismiss="modal"><spring:message code="global.close" /></button>

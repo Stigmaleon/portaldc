@@ -22,7 +22,7 @@
         <put-attribute name="body" value="/WEB-INF/views/jsp/home.jsp"/>
     </definition>
     
-	<definition name="createDistribution" extends="baseLayout">
-		<put-attribute name="body" value="/WEB-INF/views/jsp/distribution/createDistribution.jsp" />
+	<definition name="createDistributionFilm" extends="baseLayout">
+		<put-attribute name="body" value="/WEB-INF/views/jsp/distribution/createDistributionFilm.jsp" />
 	</definition>
 </tiles-definitions>

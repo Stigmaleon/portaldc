@@ -3,6 +3,7 @@ package com.portaldc.impl.dao.category;
 import java.util.List;
 
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Order;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -17,7 +18,7 @@ public class CategoryDAOImpl implements CategoryDAO{
 	
 	@Override
 	public List<Category> getCategoris() {		
-		return (List<Category>) sessionFactory.getCurrentSession().createCriteria(Category.class).list();
+		return (List<Category>) sessionFactory.getCurrentSession().createCriteria(Category.class).addOrder(Order.asc("id")).list();
 	}
 
 }
