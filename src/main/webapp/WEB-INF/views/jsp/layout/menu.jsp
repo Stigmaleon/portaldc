@@ -47,6 +47,11 @@ $(function(){
         if($(this).val() == 1)
             window.location.href = "create_distribution_film";
     });
+
+    $("#chooseCategoryButton").click(function(){
+        if($("#modalSelectDistrType").val() == 1)
+            window.location.href = "create_distribution_film";
+    });
 });
 	
 </script>
@@ -81,6 +86,7 @@ $(function(){
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn" data-dismiss="modal"><spring:message code="global.close" /></button>
+                <button type="button" class="btn" id="chooseCategoryButton"><spring:message code="global.choose" /></button>
 			</div>
 		</div>
 	</div>
