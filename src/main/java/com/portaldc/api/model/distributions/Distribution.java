@@ -22,12 +22,16 @@ public class Distribution extends Identificator{
 
     @Column(name = "name", nullable = false)
     private String name;
+    @Column(name = "name_native")
+    private  String nativeName;
     @Column(name = "year")
     private int year;
     @Column(name = "description")
     private String description;
     @Column(name = "ganre")
     private String ganre;
+    @Column(name = "country")
+    private String country;
     @Column(name = "state", nullable = false)
     private String state;
 
@@ -47,6 +51,14 @@ public class Distribution extends Identificator{
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getNativeName() {
+        return nativeName;
+    }
+
+    public void setNativeName(String nativeName) {
+        this.nativeName = nativeName;
     }
 
     public int getYear() {
@@ -71,6 +83,14 @@ public class Distribution extends Identificator{
 
     public void setGanre(String ganre) {
         this.ganre = ganre;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
     }
 
     public String getState() {
