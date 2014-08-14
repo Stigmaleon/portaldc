@@ -25,6 +25,10 @@ body{
 	text-align:  center;
 }
 
+.cleditorMain{
+    border-radius: 4px;
+}
+
 .register_form{
 	
 	height: auto;
