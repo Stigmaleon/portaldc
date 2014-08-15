@@ -1,54 +1,33 @@
-package com.portaldc.api.model.distributions;
+package com.portaldc.api.dto.distibution;
 
-import com.portaldc.api.model.Identificator;
 import com.portaldc.api.model.category.Category;
 import com.portaldc.api.model.links.Link;
 import com.portaldc.api.model.user.User;
 
-
-import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
 
-/**
- * Created by Dmitry Romaniuk on 10.08.2014.
- */
+public class DistributionDTO implements Serializable{
 
-@Entity
-@Table(name = "distribution")
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(name = "discriminator", discriminatorType = DiscriminatorType.STRING)
-@DiscriminatorValue(value = "distribution")
-public class Distribution extends Identificator{
-
-    @Column(name = "name", nullable = false)
+    private Long id;
     private String name;
-    @Column(name = "name_native")
     private  String nativeName;
-    @Column(name = "year")
     private int year;
-    @Column(name = "description")
     private String description;
-    @Column(name = "ganre")
     private String ganre;
-    @Column(name = "country")
     private String country;
-    @Column(name = "state", nullable = false)
     private String state;
-
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "distribution")
     private List<Link> links;
-
-
-    @ManyToMany(fetch = FetchType.LAZY)
-    @JoinTable(name = "distribution_to_category",
-                joinColumns = {@JoinColumn(name = "id_distribution")},
-                inverseJoinColumns = {@JoinColumn(name = "id_category")})
     private List<Category> categories;
+    private Long user;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_user", nullable = false)
-    private User user;
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getName() {
         return name;
@@ -99,14 +78,14 @@ public class Distribution extends Identificator{
     }
 
     public String getState() {
-		return state;
-	}
+        return state;
+    }
 
-	public void setState(String state) {
-		this.state = state;
-	}
+    public void setState(String state) {
+        this.state = state;
+    }
 
-	public List<Link> getLinks() {
+    public List<Link> getLinks() {
         return links;
     }
 
@@ -122,11 +101,11 @@ public class Distribution extends Identificator{
         this.categories = categories;
     }
 
-    public User getUser() {
+    public Long getUser() {
         return user;
     }
 
-    public void setUser(User user) {
+    public void setUser(Long user) {
         this.user = user;
     }
 }

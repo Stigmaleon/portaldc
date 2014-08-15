@@ -14,6 +14,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import com.portaldc.api.model.distributions.Distribution;
 import org.codehaus.jackson.annotate.JsonIgnore;
 
 import com.portaldc.api.model.Identificator;
@@ -32,6 +33,9 @@ public class User extends Identificator {
 	private String password;
 	@Column(name = "email")
 	private String email;
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
+    List<Distribution> distributions;
 	
 	@JsonIgnore
 	@ManyToMany(fetch = FetchType.EAGER)
@@ -64,8 +68,16 @@ public class User extends Identificator {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	
-	public List<Role> getRoles() {
+
+    public List<Distribution> getDistributions() {
+        return distributions;
+    }
+
+    public void setDistributions(List<Distribution> distributions) {
+        this.distributions = distributions;
+    }
+
+    public List<Role> getRoles() {
 		return roles;
 	}
 	
