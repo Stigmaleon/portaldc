@@ -8,6 +8,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 public class SysUserDetails implements UserDetails {
 
+    private Long id;
 	private String username;
 	private String password;
 	private Collection<GrantedAuthority> authorities;
@@ -18,7 +19,15 @@ public class SysUserDetails implements UserDetails {
 		authorities = new HashSet<GrantedAuthority>();
 	}
 
-	@Override
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    @Override
 	public String getUsername() {
 		return username;
 	}

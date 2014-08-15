@@ -33,6 +33,7 @@ public class SecurityServiceImpl implements UserDetailsService {
 	private UserDetails prepareUser(User user) {
 
 		SysUserDetails userDetails = new SysUserDetails();
+        userDetails.setId(user.getId());
 		userDetails.setUsername(user.getLogin());
 		userDetails.setPassword(user.getPassword());
 		for (Role role : user.getRoles()) {
