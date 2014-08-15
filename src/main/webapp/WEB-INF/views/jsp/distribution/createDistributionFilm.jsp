@@ -1,8 +1,42 @@
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
+<%@ page pageEncoding="UTF-8" %>
 
 <script>
     $(document).ready(function(){
         $("#filmDescription").cleditor();
+
+        $("#createDistrButton").click(function(){
+
+            var hasEmpty = false;
+            var film = new FilmDistribution();
+
+            $(".not-empty").each(function(){
+                if($(this).val() === "") {
+                    $(this).closest("div.form-group").addClass("has-error");
+                    hasEmpty = true;
+                }
+                else {
+                    $(this).closest("div.form-group").removeClass("has-error");
+                    $(this).closest("div.form-group").addClass("has-success");
+                }
+            });
+
+            if(!hasEmpty) {
+                film.name = $("#filmName").val();
+                film.nativeName = $("#filmNameNative").val();
+                film.ganre = $("#filmGanre").val();
+                film.year = $("#filmYear").val();
+                film.time = $("#filmTime").val();
+                film.country = $("#filmCountry").val();
+                film.linkKinopoisk = $("#filmLinkImdb").val();
+                film.linkImdb = $("#filmLinkKinopoisk").val();
+                film.description = $("#filmDescription").val();
+
+                console.log(film);
+            }
+
+        });
+
     });
 </script>
 
@@ -13,7 +47,7 @@
             <label for="filmName" class="col-md-3 control-label"><spring:message code="distribution.name"/></label>
 
             <div class="col-md-9">
-                <input type="text" id="filmName" class="form-control" autofocus="autofocus">
+                <input type="text" id="filmName" class="form-control not-empty" autofocus="autofocus">
             </div>
         </div>
 
@@ -22,7 +56,7 @@
                     code="distribution.native_name"/></label>
 
             <div class="col-md-9">
-                <input type="text" id="filmNameNative" class="form-control">
+                <input type="text" id="filmNameNative" class="form-control not-empty">
             </div>
         </div>
 
@@ -30,7 +64,7 @@
             <label for="filmGanre" class="col-md-3 control-label"><spring:message code="distribution.ganre"/></label>
 
             <div class="col-md-9">
-                <input type="text" id="filmGanre" class="form-control">
+                <input type="text" id="filmGanre" class="form-control not-empty">
             </div>
         </div>
 
@@ -38,12 +72,15 @@
             <label for="filmYear" class="col-md-3 control-label"><spring:message code="distribution.year"/></label>
 
             <div class="col-md-3">
-                <input type="text" id="filmYear" class="form-control">
+                <input type="text" id="filmYear" class="form-control not-empty">
             </div>
+        </div>
+
+        <div class="form-group">
             <label for="filmTime" class="col-md-3 control-label"><spring:message code="distribution.time"/></label>
 
             <div class="col-md-3">
-                <input type="text" id="filmTime" class="form-control">
+                <input type="text" id="filmTime" class="form-control not-empty">
             </div>
         </div>
 
@@ -51,7 +88,7 @@
             <label for="filmCountry" class="col-md-3 control-label"><spring:message code="distribution.country"/></label>
 
             <div class="col-md-9">
-                <input type="text" id="filmCountry" class="form-control">
+                <input type="text" id="filmCountry" class="form-control not-empty">
             </div>
         </div>
 
@@ -59,7 +96,7 @@
             <label for="filmLinkImdb" class="col-md-3 control-label"><spring:message code="distribution.linkImdb"/></label>
 
             <div class="col-md-9">
-                <input type="text" id="filmLinkImdb" class="form-control">
+                <input type="url" id="filmLinkImdb" class="form-control not-empty">
             </div>
         </div>
 
@@ -67,7 +104,7 @@
             <label for="filmLinkKinopoisk" class="col-md-3 control-label"><spring:message code="distribution.linkKinopoisk"/></label>
 
             <div class="col-md-9">
-                <input type="text" id="filmLinkKinopoisk" class="form-control">
+                <input type="url" id="filmLinkKinopoisk" class="form-control not-empty">
             </div>
         </div>
 
@@ -75,13 +112,13 @@
             <label for="filmDescription" class="col-md-3 control-label"><spring:message code="distribution.description"/></label>
 
             <div class="col-md-9">
-                <textarea id="filmDescription"></textarea>
+                <textarea id="filmDescription" class="not-empty"></textarea>
             </div>
         </div>
 
         <div class="form-group">
             <div class="col-md-6 col-md-offset-3">
-                <button class="btn btn-primary  ">Create distribution</button>
+                <button class="btn btn-primary" id="createDistrButton">Create distribution</button>
             </div>
         </div>
 
