@@ -32,7 +32,13 @@
                 film.linkImdb = $("#filmLinkKinopoisk").val();
                 film.description = $("#filmDescription").val();
 
-                console.log(film);
+                $.ajax({
+                    type: "POST",
+                    datatype: "json",
+                    contentType: "application/json; charset=utf-8",
+                    data: JSON.stringify(film),
+                    url: "createFilmDistribution"
+                });
             }
 
         });

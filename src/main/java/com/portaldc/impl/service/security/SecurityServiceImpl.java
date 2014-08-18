@@ -26,7 +26,7 @@ public class SecurityServiceImpl implements UserDetailsService {
 			throws UsernameNotFoundException {
 		User user = new User();
 
-		user = userDAO.getUser(username);
+		user = userDAO.findUserByLogin(username);
 		return prepareUser(user);
 	}
 

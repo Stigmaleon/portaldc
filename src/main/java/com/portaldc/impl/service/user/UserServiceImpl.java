@@ -50,7 +50,7 @@ public class UserServiceImpl implements UserService {
 	@Transactional
 	public UserDTO getUser(String login) {
 		
-		User user = userDAO.getUser(login);			
+		User user = userDAO.findUserByLogin(login);
 		return userFactory.createDTO(user);
 	}
 

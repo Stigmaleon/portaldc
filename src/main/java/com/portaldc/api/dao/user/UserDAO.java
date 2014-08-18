@@ -7,6 +7,9 @@ public interface UserDAO
 	
 	public void addUser(User user);
 	
-	public User getUser(String login);
+	public User findUserByLogin(String login);
+
+    public User findUserById(Long id);
+
 	
 }
