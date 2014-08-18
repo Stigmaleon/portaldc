@@ -2,12 +2,12 @@ package com.portaldc.api.model.distributions;
 
 import com.portaldc.api.model.Identificator;
 import com.portaldc.api.model.category.Category;
+import com.portaldc.api.model.category.Subcategory;
 import com.portaldc.api.model.links.Link;
 import com.portaldc.api.model.user.User;
 
 
 import javax.persistence.*;
-import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -41,10 +41,10 @@ public class Distribution extends Identificator{
 
 
     @ManyToMany(fetch = FetchType.LAZY)
-    @JoinTable(name = "distribution_to_category",
+    @JoinTable(name = "distribution_to_subcategory",
                 joinColumns = {@JoinColumn(name = "id_distribution")},
-                inverseJoinColumns = {@JoinColumn(name = "id_category")})
-    private List<Category> categories;
+                inverseJoinColumns = {@JoinColumn(name = "id_subcategory")})
+    private List<Subcategory> subcategories;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_user", nullable = false)
@@ -114,12 +114,12 @@ public class Distribution extends Identificator{
         this.links = links;
     }
 
-    public List<Category> getCategories() {
-        return categories;
+    public List<Subcategory> getSubcategories() {
+        return subcategories;
     }
 
-    public void setCategories(List<Category> categories) {
-        this.categories = categories;
+    public void setSubcategories(List<Subcategory> categories) {
+        this.subcategories = categories;
     }
 
     public User getUser() {

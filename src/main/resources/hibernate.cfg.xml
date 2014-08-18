@@ -7,6 +7,7 @@
 		<mapping class="com.portaldc.api.model.user.User" />
 		<mapping class="com.portaldc.api.model.role.Role" />
         <mapping class="com.portaldc.api.model.category.Category" />
+        <mapping class="com.portaldc.api.model.category.Subcategory" />
         <mapping class="com.portaldc.api.model.distributions.Distribution" />
         <mapping class="com.portaldc.api.model.distributions.Film" />
         <mapping class="com.portaldc.api.model.links.Link" />

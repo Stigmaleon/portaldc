@@ -2,11 +2,8 @@ package com.portaldc.impl.dto.distribution.film;
 
 import com.portaldc.api.dao.user.UserDAO;
 import com.portaldc.api.dto.distibution.film.FilmDTO;
-import com.portaldc.api.model.category.Category;
 import com.portaldc.api.model.distributions.Film;
 import org.springframework.beans.factory.annotation.Autowired;
-
-import java.util.ArrayList;
 
 public class FilmDTOFactory {
 
@@ -21,7 +18,7 @@ public class FilmDTOFactory {
             film.setLinkImdb(dto.getLinkImdb());
             film.setLinkKinopoisk(dto.getLinkKinopoisk());
             film.setTime(dto.getTime());
-            film.setCategories(dto.getCategories());
+            film.setSubcategories(dto.getCategories());
             film.setCountry(dto.getCountry());
             film.setDescription(dto.getDescription());
             film.setGanre(dto.getGanre());

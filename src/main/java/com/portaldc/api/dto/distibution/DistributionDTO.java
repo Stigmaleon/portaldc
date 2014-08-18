@@ -1,8 +1,7 @@
 package com.portaldc.api.dto.distibution;
 
-import com.portaldc.api.model.category.Category;
+import com.portaldc.api.model.category.Subcategory;
 import com.portaldc.api.model.links.Link;
-import com.portaldc.api.model.user.User;
 
 import java.io.Serializable;
 import java.util.List;
@@ -18,7 +17,7 @@ public class DistributionDTO implements Serializable{
     private String country;
     private String state;
     private List<Link> links;
-    private List<Category> categories;
+    private List<Subcategory> categories;
     private Long user;
 
     public Long getId() {
@@ -93,11 +92,11 @@ public class DistributionDTO implements Serializable{
         this.links = links;
     }
 
-    public List<Category> getCategories() {
+    public List<Subcategory> getCategories() {
         return categories;
     }
 
-    public void setCategories(List<Category> categories) {
+    public void setCategories(List<Subcategory> categories) {
         this.categories = categories;
     }
 
