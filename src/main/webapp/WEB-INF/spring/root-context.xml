@@ -26,12 +26,8 @@
 
 	<context:annotation-config />
 
-	<context:component-scan base-package="com.portaldc.api.dao" />
-	<context:component-scan base-package="com.portaldc.impl.dao"/>
-	<context:component-scan base-package="com.portaldc.api.service" />	
-	<context:component-scan base-package="com.portaldc.impl.service"/>
-	<context:component-scan base-package="com.portaldc.api.dto"/>
-	<context:component-scan base-package="com.portaldc.impl.dto"/>
+	<context:component-scan base-package="com.portaldc.api.*" />
+	<context:component-scan base-package="com.portaldc.impl.*"/>
 
 	<import resource="data.xml" />
 

@@ -13,7 +13,8 @@ public class FilmServiceImpl implements FilmService{
     @Autowired
     FilmDAO filmDAO;
 
-    FilmDTOFactory filmDTOFactory = new FilmDTOFactory();
+    @Autowired
+    FilmDTOFactory filmDTOFactory;
 
     @Override
     public void saveFilm(FilmDTO filmDTO) {

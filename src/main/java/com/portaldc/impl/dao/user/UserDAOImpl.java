@@ -36,6 +36,6 @@ public class UserDAOImpl implements UserDAO
 
     @Override
     public User findUserById(Long id) {
-        return (User) sessionFactory.getCurrentSession().createCriteria(User.class).add(Restrictions.eq("id", Long.toString(id))).list().get(0);
+        return (User) sessionFactory.getCurrentSession().createCriteria(User.class).add(Restrictions.eq("id", id)).list().get(0);
     }
 }

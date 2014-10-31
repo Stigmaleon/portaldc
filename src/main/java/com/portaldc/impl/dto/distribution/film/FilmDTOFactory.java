@@ -4,7 +4,9 @@ import com.portaldc.api.dao.user.UserDAO;
 import com.portaldc.api.dto.distibution.film.FilmDTO;
 import com.portaldc.api.model.distributions.Film;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
 public class FilmDTOFactory {
 
     @Autowired
@@ -30,7 +32,7 @@ public class FilmDTOFactory {
             film.setGanre(dto.getGanre());
             film.setState(dto.getState());
             film.setYear(dto.getYear());
-            film.setUser(userDAO.findUserById(dto.getId()));
+            film.setUser(userDAO.findUserById(dto.getUser()));
         }
 
         return film;
