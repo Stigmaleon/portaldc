@@ -43,11 +43,6 @@ $(function(){
 		$("#selectType").modal("show");
 	});
 
-    $("#modalSelectDistrType").click(function(){
-        if($(this).val() == 1)
-            window.location.href = "create_distribution_film";
-    });
-
     $("#chooseCategoryButton").click(function(){
         if($("#modalSelectDistrType").val() == 1)
             window.location.href = "create_distribution_film";

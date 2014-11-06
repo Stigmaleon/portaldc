@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class FilmDistributionController extends AppController{
@@ -23,13 +24,11 @@ public class FilmDistributionController extends AppController{
     @RequestMapping(value = "/createFilmDistribution",
                     method = RequestMethod.POST,
                     headers = "Accept=application/json")
-    public String createFilmDistribution(@RequestBody FilmDTO filmDTO){
+    public @ResponseBody Long createFilmDistribution(@RequestBody FilmDTO filmDTO){
 
-        filmDTO.setState(DistributionState.NEW.getState());
         filmDTO.setUser(getUserId());
 
-        filmService.saveFilm(filmDTO);
-        return HOME_PAGE;
+        return filmService.saveFilm(filmDTO);
     }
 
 }

@@ -12,9 +12,14 @@ public class DistributionDAOImpl implements DistributionDAO{
     @Autowired
     SessionFactory sessionFactory;
 
+    /**
+     *
+     * @param distribution distribution to save
+     * @return id of saved distribution
+     */
     @Override
-    public void saveDistribution(Distribution distribution) {
+    public Long saveDistribution(Distribution distribution) {
 
-        sessionFactory.getCurrentSession().save(distribution);
+        return (Long)sessionFactory.getCurrentSession().save(distribution);
     }
 }

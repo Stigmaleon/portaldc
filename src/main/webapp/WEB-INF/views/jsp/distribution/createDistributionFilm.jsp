@@ -33,11 +33,24 @@
                 film.description = $("#filmDescription").val();
 
                 $.ajax({
+                    url: "createFilmDistribution",
                     type: "POST",
                     datatype: "json",
                     contentType: "application/json; charset=utf-8",
                     data: JSON.stringify(film),
-                    url: "createFilmDistribution"
+                    success:function(data){
+                        console.log(data);
+                        $.ajax({
+                            url: "upload/distribution/poster?distId=" + data,
+                            type: "POST",
+                            datatype: "json",
+                            enctype: "multipart/form-data",
+                            data: new FormData($("#filmPoster")),
+                            success: function(){
+                                window.location.href = "home";
+                            }
+                        });
+                    }
                 });
             }
 
@@ -63,6 +76,15 @@
 
             <div class="col-md-9">
                 <input type="text" id="filmNameNative" class="form-control not-empty">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="filmPoster" class="col-md-3 control-label"><spring:message
+                    code="distribution.poster"/></label>
+
+            <div class="col-md-9">
+                <input type="file" id="filmPoster" class="form-control not-empty">
             </div>
         </div>
 

@@ -4,6 +4,7 @@ public enum DistributionState {
     NEW("N"),
     WRONG_DECORATION("WD"),
     MODERATED("M"),
+    NOT_MODERATED("NM"),
     DELETED("D");
 
 

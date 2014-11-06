@@ -4,5 +4,5 @@ import com.portaldc.api.model.distributions.Distribution;
 
 public interface DistributionDAO {
 
-    public void saveDistribution(Distribution distribution);
+    public Long saveDistribution(Distribution distribution);
 }

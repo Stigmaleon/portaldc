@@ -4,6 +4,6 @@ import com.portaldc.api.dto.distibution.film.FilmDTO;
 
 public interface FilmService {
 
-    public void saveFilm(FilmDTO filmDTO);
+    public Long saveFilm(FilmDTO filmDTO);
 
 }
