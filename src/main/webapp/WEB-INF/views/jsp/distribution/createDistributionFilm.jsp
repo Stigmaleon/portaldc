@@ -39,17 +39,22 @@
                     contentType: "application/json; charset=utf-8",
                     data: JSON.stringify(film),
                     success:function(data){
-                        console.log(data);
+
+                        var  formData = new FormData($('#filmPoster')[0]);
+
                         $.ajax({
-                            url: "upload/distribution/poster?distId=" + data,
+                            url: "upload/distribution/poster/" + data,
                             type: "POST",
                             datatype: "json",
-                            enctype: "multipart/form-data",
-                            data: new FormData($("#filmPoster")),
+                            processData: false,
+                            contentType: false,
+                            cache: false,
+                            data: formData,
                             success: function(){
                                 window.location.href = "home";
                             }
                         });
+
                     }
                 });
             }
@@ -84,7 +89,7 @@
                     code="distribution.poster"/></label>
 
             <div class="col-md-9">
-                <input type="file" id="filmPoster" class="form-control not-empty">
+                <input type="file" name="poster" id="filmPoster" class="form-control not-empty">
             </div>
         </div>
 
