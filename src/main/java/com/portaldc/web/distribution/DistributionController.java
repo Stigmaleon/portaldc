@@ -12,7 +12,7 @@ public class DistributionController {
 
     @Secured(value = "ROLE_USER")
     @RequestMapping(value = "/create_distribution_film", method = RequestMethod.GET)
-    public String createDistribution(){
+    public String createDistribution() {
         return CREATE_DISTRIBUTION_FILM_PAGE;
     }
 

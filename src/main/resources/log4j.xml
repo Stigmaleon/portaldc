@@ -26,12 +26,12 @@
 	
 	<!-- 3rdparty Loggers -->
 	<logger name="org.springframework">
-		<level value="INFO" />
+		<level value="ALL" />
 	</logger>
 
 	
 	<logger name="org.hibernate">
-		<level value="TRACE"/>
+		<level value="DEBUG"/>
 	</logger>
 	<!-- Root Logger -->
 	<root>
