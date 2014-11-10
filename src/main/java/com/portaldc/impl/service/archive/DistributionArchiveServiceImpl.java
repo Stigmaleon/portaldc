@@ -8,15 +8,14 @@ import org.springframework.stereotype.Service;
 import java.io.InputStream;
 
 @Service
-@PropertySource({"classpath:application.properties"})
 public class DistributionArchiveServiceImpl implements DistributionArchiveService {
 
-    @Value("{archive_path}")
+    @Value("${application.archive_path}")
     private String archivePath;
 
     @Override
     public void savePoster(InputStream inputStream, Long distributionId) {
-        System.out.println(archivePath);
+        System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!    " + archivePath);
     }
 
     private void checkArchiveFolder() {
