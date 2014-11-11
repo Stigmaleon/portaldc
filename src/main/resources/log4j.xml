@@ -10,7 +10,8 @@
 		</layout>
 	</appender>
 	
-	<appender name="appLogFile" class="org.apache.log4j.FileAppender">
+	<appender name="appLogFile" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="DatePattern"  value="'.'yyyy-MM-dd"/>
 		<param name="File" value="${catalina.home}/logs/portaldc.log"/>
 		<param name="Append" value="true"/>
 		<param name="Threshold" value="TRACE"/>
@@ -21,16 +22,16 @@
 	
 	<!-- Application Loggers -->
 	<logger name="com.portaldc.app">
-		<level value="ALL" />
+		<level value="DEBUG" />
 	</logger>
 	
 	<!-- 3rdparty Loggers -->
 	<logger name="org.springframework">
-		<level value="ALL" />
+		<level value="INFO" />
 	</logger>
 
 	
-	<logger name="org.hibernate">
+	<logger name="org.hibernate.SQL">
 		<level value="DEBUG"/>
 	</logger>
 	<!-- Root Logger -->

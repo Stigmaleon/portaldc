@@ -1,8 +1,8 @@
 package com.portaldc.api.service.archive;
 
-import java.io.InputStream;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 
 public interface DistributionArchiveService {
-    public void savePoster(InputStream inputStream, Long distributionId);
+    public void savePoster(MultipartHttpServletRequest request, Long distributionId);
 }

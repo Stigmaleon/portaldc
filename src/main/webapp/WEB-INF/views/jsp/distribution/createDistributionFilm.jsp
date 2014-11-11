@@ -1,17 +1,17 @@
-<%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ page pageEncoding="UTF-8" %>
 
 <script>
-    $(document).ready(function(){
+    $(document).ready(function () {
         $("#filmDescription").cleditor();
 
-        $("#createDistrButton").click(function(){
+        $("#createDistrButton").click(function () {
 
             var hasEmpty = false;
             var film = new FilmDistribution();
 
-            $(".not-empty").each(function(){
-                if($(this).val() === "") {
+            $(".not-empty").each(function () {
+                if ($(this).val() === "") {
                     $(this).closest("div.form-group").addClass("has-error");
                     hasEmpty = true;
                 }
@@ -21,7 +21,7 @@
                 }
             });
 
-            if(!hasEmpty) {
+            if (!hasEmpty) {
                 film.name = $("#filmName").val();
                 film.nativeName = $("#filmNameNative").val();
                 film.ganre = $("#filmGanre").val();
@@ -38,22 +38,20 @@
                     datatype: "json",
                     contentType: "application/json; charset=utf-8",
                     data: JSON.stringify(film),
-                    success:function(data){
+                    success: function (data) {
 
-                        var  formData = new FormData($('#filmPoster')[0]);
+                        var formData = new FormData();
+                        var poster = document.getElementById("filmPoster").files[0];
+                        formData.append("posterFile", poster);
 
-                        $.ajax({
-                            url: "upload/distribution/poster/" + data,
-                            type: "POST",
-                            datatype: "json",
-                            processData: false,
-                            contentType: false,
-                            cache: false,
-                            data: formData,
-                            success: function(){
+                        var xhr = new XMLHttpRequest();
+                        xhr.open("POST", "upload/distribution/poster/" + data, true);
+                        xhr.send(formData);
+                        xhr.onload = function (e) {
+                            if (this.status = 200) {
                                 window.location.href = "home";
                             }
-                        });
+                        };
 
                     }
                 });
@@ -80,7 +78,7 @@
                     code="distribution.native_name"/></label>
 
             <div class="col-md-9">
-                <input type="text" id="filmNameNative" class="form-control not-empty">
+                <input type="text" id="filmNameNative" class="form-control not-empty" accept="image/*">
             </div>
         </div>
 
@@ -118,7 +116,8 @@
         </div>
 
         <div class="form-group">
-            <label for="filmCountry" class="col-md-3 control-label"><spring:message code="distribution.country"/></label>
+            <label for="filmCountry" class="col-md-3 control-label"><spring:message
+                    code="distribution.country"/></label>
 
             <div class="col-md-9">
                 <input type="text" id="filmCountry" class="form-control not-empty">
@@ -126,7 +125,8 @@
         </div>
 
         <div class="form-group">
-            <label for="filmLinkImdb" class="col-md-3 control-label"><spring:message code="distribution.linkImdb"/></label>
+            <label for="filmLinkImdb" class="col-md-3 control-label"><spring:message
+                    code="distribution.linkImdb"/></label>
 
             <div class="col-md-9">
                 <input type="url" id="filmLinkImdb" class="form-control not-empty">
@@ -134,7 +134,8 @@
         </div>
 
         <div class="form-group">
-            <label for="filmLinkKinopoisk" class="col-md-3 control-label"><spring:message code="distribution.linkKinopoisk"/></label>
+            <label for="filmLinkKinopoisk" class="col-md-3 control-label"><spring:message
+                    code="distribution.linkKinopoisk"/></label>
 
             <div class="col-md-9">
                 <input type="url" id="filmLinkKinopoisk" class="form-control not-empty">
@@ -142,7 +143,8 @@
         </div>
 
         <div class="form-group">
-            <label for="filmDescription" class="col-md-3 control-label"><spring:message code="distribution.description"/></label>
+            <label for="filmDescription" class="col-md-3 control-label"><spring:message
+                    code="distribution.description"/></label>
 
             <div class="col-md-9">
                 <textarea id="filmDescription" class="not-empty"></textarea>
