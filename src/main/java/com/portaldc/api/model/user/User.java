@@ -22,52 +22,52 @@ import com.portaldc.api.model.role.Role;
 
 @Entity
 @Table(name = "user")
-@NamedQueries({ @NamedQuery(
-					name = "currentUser", 
-					query = "from User u where u.login = :login")})
+@NamedQueries({@NamedQuery(
+        name = "currentUser",
+        query = "from User u where u.login = :login")})
 public class User extends Identificator {
 
-	@Column(name = "login", unique=true, nullable = false)
-	private String login;
-	@Column(name = "password")
-	private String password;
-	@Column(name = "email")
-	private String email;
+    @Column(name = "login", unique = true, nullable = false)
+    private String login;
+    @Column(name = "password")
+    private String password;
+    @Column(name = "email")
+    private String email;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
     List<Distribution> distributions;
-	
-	@JsonIgnore
-	@ManyToMany(fetch = FetchType.EAGER)
-	@JoinTable(
-			name = "user_role",
-			joinColumns = {@JoinColumn(name = "userid")},
-			inverseJoinColumns = {@JoinColumn(name = "roleid")})
-	private List<Role> roles;
 
-	public String getLogin() {
-		return login;
-	}
+    @JsonIgnore
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(
+            name = "user_role",
+            joinColumns = {@JoinColumn(name = "userid")},
+            inverseJoinColumns = {@JoinColumn(name = "roleid")})
+    private List<Role> roles;
 
-	public void setLogin(String login) {
-		this.login = login;
-	}
+    public String getLogin() {
+        return login;
+    }
 
-	public String getPassword() {
-		return password;
-	}
+    public void setLogin(String login) {
+        this.login = login;
+    }
 
-	public void setPassword(String password) {
-		this.password = password;
-	}
-	
-	public String getEmail() {
-		return email;
-	}
-	
-	public void setEmail(String email) {
-		this.email = email;
-	}
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
     public List<Distribution> getDistributions() {
         return distributions;
@@ -78,11 +78,11 @@ public class User extends Identificator {
     }
 
     public List<Role> getRoles() {
-		return roles;
-	}
-	
-	public void setRoles(List<Role> roles) {
-		this.roles = roles;
-	}
+        return roles;
+    }
+
+    public void setRoles(List<Role> roles) {
+        this.roles = roles;
+    }
 
 }

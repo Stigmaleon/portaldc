@@ -1,22 +1,23 @@
 package com.portaldc.api.dto.distibution;
 
+import com.portaldc.api.dto.distibution.link.LinkDTO;
 import com.portaldc.api.model.category.Subcategory;
-import com.portaldc.api.model.links.Link;
+import com.portaldc.api.model.distributions.link.Link;
 
 import java.io.Serializable;
 import java.util.List;
 
-public class DistributionDTO implements Serializable{
+public class DistributionDTO implements Serializable {
 
     private Long id;
     private String name;
-    private  String nativeName;
+    private String nativeName;
     private int year;
     private String description;
     private String ganre;
     private String country;
     private String state;
-    private List<Link> links;
+    private List<LinkDTO> links;
     private List<Subcategory> categories;
     private Long user;
 
@@ -84,11 +85,11 @@ public class DistributionDTO implements Serializable{
         this.state = state;
     }
 
-    public List<Link> getLinks() {
+    public List<LinkDTO> getLinks() {
         return links;
     }
 
-    public void setLinks(List<Link> links) {
+    public void setLinks(List<LinkDTO> links) {
         this.links = links;
     }
 

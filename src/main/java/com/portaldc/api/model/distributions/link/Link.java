@@ -1,17 +1,16 @@
-package com.portaldc.api.model.links;
+package com.portaldc.api.model.distributions.link;
 
 import com.portaldc.api.model.Identificator;
 import com.portaldc.api.model.distributions.Distribution;
 
 import javax.persistence.*;
-import java.util.List;
 
 /**
  * Created by Dmitry Romaniuk on 10.08.2014.
  */
 @Entity
 @Table(name = "links")
-public class Link extends Identificator{
+public class Link extends Identificator {
 
     @Column(name = "link_position", nullable = false)
     private int position;

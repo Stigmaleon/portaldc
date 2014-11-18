@@ -15,29 +15,29 @@ import com.portaldc.api.model.user.User;
 
 @Entity
 @Table(name = "role")
-public class Role extends Identificator{
-	
-	@Column(name = "name", nullable = false, unique = true)
-	private String name;
+public class Role extends Identificator {
 
-	@JsonIgnore
-	@ManyToMany(fetch = FetchType.EAGER, mappedBy = "roles")
-	private List<User> users;
+    @Column(name = "name", nullable = false, unique = true)
+    private String name;
 
-	public String getName() {
-		return name;
-	}
+    @JsonIgnore
+    @ManyToMany(fetch = FetchType.EAGER, mappedBy = "roles")
+    private List<User> users;
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public List<User> getUsers() {
-		return users;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public void setUsers(List<User> users) {
-		this.users = users;
-	}
-	
+    public List<User> getUsers() {
+        return users;
+    }
+
+    public void setUsers(List<User> users) {
+        this.users = users;
+    }
+
 }

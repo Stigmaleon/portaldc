@@ -1,9 +1,8 @@
 package com.portaldc.api.model.distributions;
 
 import com.portaldc.api.model.Identificator;
-import com.portaldc.api.model.category.Category;
 import com.portaldc.api.model.category.Subcategory;
-import com.portaldc.api.model.links.Link;
+import com.portaldc.api.model.distributions.link.Link;
 import com.portaldc.api.model.user.User;
 
 
@@ -19,12 +18,12 @@ import java.util.List;
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "discriminator", discriminatorType = DiscriminatorType.STRING)
 @DiscriminatorValue(value = "distribution")
-public class Distribution extends Identificator{
+public class Distribution extends Identificator {
 
     @Column(name = "name", nullable = false)
     private String name;
     @Column(name = "name_native")
-    private  String nativeName;
+    private String nativeName;
     @Column(name = "year")
     private int year;
     @Column(name = "description")
@@ -42,8 +41,8 @@ public class Distribution extends Identificator{
 
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(name = "distribution_to_subcategory",
-                joinColumns = {@JoinColumn(name = "id_distribution")},
-                inverseJoinColumns = {@JoinColumn(name = "id_subcategory")})
+            joinColumns = {@JoinColumn(name = "id_distribution")},
+            inverseJoinColumns = {@JoinColumn(name = "id_subcategory")})
     private List<Subcategory> subcategories;
 
     @ManyToOne(fetch = FetchType.LAZY)
@@ -99,14 +98,14 @@ public class Distribution extends Identificator{
     }
 
     public String getState() {
-		return state;
-	}
+        return state;
+    }
 
-	public void setState(String state) {
-		this.state = state;
-	}
+    public void setState(String state) {
+        this.state = state;
+    }
 
-	public List<Link> getLinks() {
+    public List<Link> getLinks() {
         return links;
     }
 

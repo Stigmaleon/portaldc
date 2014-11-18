@@ -9,11 +9,12 @@ public enum DistributionState {
 
 
     private final String stateLabel;
-    DistributionState(String stateLabel){
+
+    DistributionState(String stateLabel) {
         this.stateLabel = stateLabel;
     }
 
-    public String getState(){
+    public String getState() {
         return stateLabel;
     }
 

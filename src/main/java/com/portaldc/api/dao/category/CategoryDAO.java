@@ -6,7 +6,7 @@ import com.portaldc.api.model.category.Category;
 import com.portaldc.api.model.category.Subcategory;
 
 public interface CategoryDAO {
-	
-	public List<Category> getCategoris();
-	
+
+    public List<Category> getCategories();
+
 }

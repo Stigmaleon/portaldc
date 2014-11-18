@@ -24,7 +24,7 @@ public class CategoryServiceImpl implements CategoryService{
 	@Override
 	@Transactional
 	public List<CategoryDTO> getCategoriesDTO() {
-		List<Category> categories = categoryDAO.getCategoris();
+		List<Category> categories = categoryDAO.getCategories();
 		return categoryFactory.createDTOs(categories);
 	}
 

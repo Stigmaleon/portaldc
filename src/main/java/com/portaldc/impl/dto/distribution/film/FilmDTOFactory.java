@@ -3,6 +3,7 @@ package com.portaldc.impl.dto.distribution.film;
 import com.portaldc.api.dao.user.UserDAO;
 import com.portaldc.api.dto.distibution.film.FilmDTO;
 import com.portaldc.api.model.distributions.Film;
+import com.portaldc.impl.dto.distribution.link.LinkDTOFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -11,6 +12,9 @@ public class FilmDTOFactory {
 
     @Autowired
     UserDAO userDAO;
+
+    @Autowired
+    LinkDTOFactory linkDTOFactory;
 
 
     public Film createModel(FilmDTO dto){
@@ -26,7 +30,7 @@ public class FilmDTOFactory {
             film.setGanre(dto.getGanre());
             if(dto.getId() != null)
                 film.setId(dto.getId());
-            film.setLinks(dto.getLinks());
+            film.setLinks(linkDTOFactory.createModels(dto.getLinks()));
             film.setName(dto.getName());
             film.setNativeName(dto.getNativeName());
             film.setGanre(dto.getGanre());

@@ -10,7 +10,7 @@
         <mapping class="com.portaldc.api.model.category.Subcategory" />
         <mapping class="com.portaldc.api.model.distributions.Distribution" />
         <mapping class="com.portaldc.api.model.distributions.Film" />
-        <mapping class="com.portaldc.api.model.links.Link" />
+        <mapping class="com.portaldc.api.model.distributions.link.Link" />
 
 	</session-factory>
 </hibernate-configuration>

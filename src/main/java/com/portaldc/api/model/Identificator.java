@@ -8,22 +8,19 @@ import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 
 @MappedSuperclass
-public class Identificator implements Serializable
-{
-	private static final long	serialVersionUID	= 1L;
-	
-	@Id
-	@Column(name = "id")
-	@GeneratedValue
-	private long	id;
-	
-	public long getId()
-	{
-		return id;
-	}
-	
-	public void setId(long id)
-	{
-		this.id = id;
-	}
+public class Identificator implements Serializable {
+    private static final long serialVersionUID = 1L;
+
+    @Id
+    @Column(name = "id")
+    @GeneratedValue
+    private long id;
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
 }

@@ -1,9 +1,6 @@
 package com.portaldc.api.model.distributions;
 
-import com.portaldc.api.model.links.Link;
-
 import javax.persistence.*;
-import java.util.List;
 
 /**
  * Created by Dmitry Romaniuk on 10.08.2014.
