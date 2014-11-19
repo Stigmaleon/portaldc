@@ -152,8 +152,9 @@
         </div>
 
         <div class="form-group">
-            <div class="col-md-6 col-md-offset-3">
-                <button class="btn btn-primary" id="createDistrButton">Create distribution</button>
+            <div class="col-md-9 col-md-offset-3">
+                <button class="btn btn-primary col-md-12" id="createDistrButton"><spring:message
+                        code="distribution.create"/></button>
             </div>
         </div>
 
