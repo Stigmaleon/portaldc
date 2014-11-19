@@ -151,8 +151,36 @@
             </div>
         </div>
 
+        <div class="col-md-9 col-md-offset-3">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><spring:message code="distribution.links"/></h3>
+                </div>
+
+                <div class="panel-body">
+                    <ul class="nav nav-tabs">
+                        <li role="presentation" class="active"><a href="#asList" aria-controls="asList" role="tab"
+                                                                  data-toggle="tab"><spring:message
+                                code="distribution.links_asList"/> </a></li>
+                        <li role="presentation"><a href="#asText" aria-controls="asText" role="tab"
+                                                   data-toggle="tab"><spring:message
+                                code="distribution.links_asText"/> </a></li>
+                    </ul>
+
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane active" id="asList">
+                            <h2>Add table from https://datatables.net/ linked with javascript object where saved links. </h2>
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="asText">
+                            <textarea id="linksAsText" class="form-control" rows="10" style="margin: 5px"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="form-group">
-            <div class="col-md-9 col-md-offset-3">
+            <div class="col-md-9     col-md-offset-3">
                 <button class="btn btn-primary col-md-12" id="createDistrButton"><spring:message
                         code="distribution.create"/></button>
             </div>
