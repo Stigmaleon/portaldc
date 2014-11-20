@@ -6,17 +6,18 @@ import java.io.Serializable;
 
 public class LinkDTO implements Serializable {
 
-    public Integer posision;
+    public Integer position;
     private String name;
     private String magnet;
+    private Long size;
     private Distribution distribution;
 
-    public Integer getPosision() {
-        return posision;
+    public Integer getPosition() {
+        return position;
     }
 
-    public void setPosision(Integer posision) {
-        this.posision = posision;
+    public void setPosition(Integer position) {
+        this.position = position;
     }
 
     public String getName() {
@@ -41,5 +42,13 @@ public class LinkDTO implements Serializable {
 
     public void setDistribution(Distribution distribution) {
         this.distribution = distribution;
+    }
+
+    public Long getSize() {
+        return size;
+    }
+
+    public void setSize(Long size) {
+        this.size = size;
     }
 }

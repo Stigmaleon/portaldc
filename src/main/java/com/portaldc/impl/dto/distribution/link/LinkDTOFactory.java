@@ -13,9 +13,10 @@ public class LinkDTOFactory {
     public Link createModel(LinkDTO linkDTO) {
         Link link = new Link();
 
-        link.setPosition(linkDTO.getPosision());
+        link.setPosition(linkDTO.getPosition());
         link.setName(linkDTO.getName());
         link.setMagnet(linkDTO.getMagnet());
+        link.setSize(linkDTO.getSize());
         link.setDistribution(linkDTO.getDistribution());
 
         return link;

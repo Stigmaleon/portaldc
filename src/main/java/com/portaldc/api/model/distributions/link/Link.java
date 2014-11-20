@@ -18,6 +18,8 @@ public class Link extends Identificator {
     private String name;
     @Column(name = "link_magnet", nullable = false)
     private String magnet;
+    @Column(name = "link_size", nullable = false)
+    private Long size;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_distribution", nullable = false)
@@ -53,5 +55,13 @@ public class Link extends Identificator {
 
     public void setDistribution(Distribution distribution) {
         this.distribution = distribution;
+    }
+
+    public Long getSize() {
+        return size;
+    }
+
+    public void setSize(Long size) {
+        this.size = size;
     }
 }
