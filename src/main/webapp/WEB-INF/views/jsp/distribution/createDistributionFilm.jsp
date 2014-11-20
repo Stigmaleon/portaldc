@@ -3,7 +3,46 @@
 
 <script>
     $(document).ready(function () {
+        var distLinks = [
+            {
+                "position": 1,
+                "name": "test name",
+                "magnet": "magnet?2349vdc971fghdr56ejdfghjnh45bbh63546yhghd45tmkdrfgmnw546ytdfghmndn56233-",
+                "size": "144032"
+            },
+            {
+                "position": 1,
+                "name": "test name",
+                "magnet": "magnet?2349vdc971233-",
+                "size": "144032"
+            }
+        ];
+
         $("#filmDescription").cleditor();
+
+        $("#tableLinks").dataTable({
+            "data": distLinks,
+            "scrollX": true,
+            "columns": [
+                {data: "position", "title": "Position", width: "10%"},
+                {data: "name", "title": "Name", width: "30%"},
+                {data: "size", "title": "Size", width: "15%"},
+                {data: "magnet", "title": "Link"}
+            ]
+        });
+
+        $("a[data-toggle='tab']").on("show.bs.tab", function (e) {
+
+            if (e.target.getAttributeNode("aria-controls").value == "asText") {
+                var linksAsText = '';
+                $.each(distLinks, function (index, value) {
+                    linksAsText += value.magnet;
+                    linksAsText += "\n";
+                });
+                $("#linksAsText").val(linksAsText);
+            }
+
+        });
 
         $("#createDistrButton").click(function () {
 
@@ -168,11 +207,17 @@
                     </ul>
 
                     <div class="tab-content">
-                        <div role="tabpanel" class="tab-pane active" id="asList">
-                            <h2>Add table from https://datatables.net/ linked with javascript object where saved links. </h2>
+                        <div role="tabpanel" class="tab-pane fade active in" id="asList">
+                            <div style="padding: 5px">
+                                <table class="table table-striped" id="tableLinks"></table>
+                            </div>
+                            <button class="btn btn-default" id="addLinkButton"><spring:message
+                                    code="distribution.add_link"></spring:message></button>
                         </div>
-                        <div role="tabpanel" class="tab-pane" id="asText">
-                            <textarea id="linksAsText" class="form-control" rows="10" style="margin: 5px"></textarea>
+                        <div role="tabpanel" class="tab-pane fade" id="asText">
+                            <textarea id="linksAsText" class="form-control" rows="10" wrap="off" style="margin: 5px"></textarea>
+                            <button class="btn btn-default" id="addLinksButton"><spring:message
+                                    code="distribution.add_links"></spring:message> </button>
                         </div>
                     </div>
                 </div>

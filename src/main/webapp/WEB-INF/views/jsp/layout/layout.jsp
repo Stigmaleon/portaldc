@@ -9,11 +9,15 @@
 	<link href="resources/css/bootstrap.css" rel="stylesheet">
     <link href="resources/css/jquery.cleditor.css" rel="stylesheet" type="text/css">
     <link href="resources/css/global.css" rel="stylesheet">
+    <link href="resources/css/dataTables.bootstrap.css" rel="stylesheet">
+    <%--<link href="resources/css/jquery.dataTables.css" rel="stylesheet">--%>
 
     <script src="resources/js/jquery.js"></script>
 	<script src="resources/js/bootstrap.js"></script>
     <script src="resources/js/jquery.cleditor.js"></script>
     <script src="resources/js/model.js"></script>
+    <script src="resources/js/jquery.dataTables.js"></script>
+    <script src="resources/js/dataTables.bootstrap.js"></script>
 
     <title><tiles:insertAttribute name="title" ignore="true"/></title>
 </head>
