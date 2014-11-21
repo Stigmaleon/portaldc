@@ -72,8 +72,8 @@ $(function(){
 
 <div class="modal fade bs-example-modal-sm" id="selectType" tabindex="-1" role="dialog" aria-labelledby="selectTypeModal" aria-hidden="true">
 	<div class="modal-dialog">
-		<div class="model-content">
-			<div class="model-header">
+		<div class="modal-content">
+			<div class="modal-header">
 				<h4 class="modal-title" id="selectTypeModal"><spring:message code="distribution.select_type" /></h4>
 			</div>
 			<div class="modal-body">
@@ -81,7 +81,7 @@ $(function(){
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn" data-dismiss="modal"><spring:message code="global.close" /></button>
-                <button type="button" class="btn" id="chooseCategoryButton"><spring:message code="global.choose" /></button>
+                <button type="button" class="btn btn-default" id="chooseCategoryButton"><spring:message code="global.choose" /></button>
 			</div>
 		</div>
 	</div>

@@ -3,30 +3,18 @@
 
 <script>
     $(document).ready(function () {
-        var distLinks = [
-            {
-                "position": 1,
-                "name": "test name",
-                "magnet": "magnet?2349vdc971fghdr56ejdfghjnh45bbh63546yhghd45tmkdrfgmnw546ytdfghmndn56233-",
-                "size": "144032"
-            },
-            {
-                "position": 1,
-                "name": "test name",
-                "magnet": "magnet?2349vdc971233-",
-                "size": "144032"
-            }
-        ];
+//        magnet:?xt=urn:tree:tiger:ONWCNZPW67PLXJJGYJHDB2D25QTUY5USBBWLUVI&xl=1362660500&dn=Ripper.Street.s01e01.HDTV.720p.dcmagnets.ru.mkv
+        var distLinks = [];
 
         $("#filmDescription").cleditor();
 
-        $("#tableLinks").dataTable({
+        var tableWithLinks = $("#tableLinks").dataTable({
             "data": distLinks,
             "scrollX": true,
             "columns": [
-                {data: "position", "title": "Position", width: "10%"},
-                {data: "name", "title": "Name", width: "30%"},
-                {data: "size", "title": "Size", width: "15%"},
+                {data: "position", "title": "Position"},
+                {data: "name", "title": "Name"},
+                {data: "size", "title": "Size"},
                 {data: "magnet", "title": "Link"}
             ]
         });
@@ -41,6 +29,37 @@
                 });
                 $("#linksAsText").val(linksAsText);
             }
+
+        });
+
+        $("#addLinksButton").click(function () {
+            distLinks = [];
+
+            var linksFromTextArea = $("#linksAsText").val().split("\n");
+            $.each(linksFromTextArea, function (index, value) {
+                if (value.length > 0) {
+                    var tempLink = new Object();
+                    tempLink.position = index;
+                    tempLink.magnet = value;
+                    tempLink.name = "";
+                    tempLink.size = 0;
+                    var params = value.split("&");
+
+                    $.each(params, function (index, value) {
+                        var keyvalue = value.split("=");
+                        if (keyvalue[0] == "dn")
+                            tempLink.name = keyvalue[1].replace(/\+/g, " ");
+
+                        if (keyvalue[0] == "dl")
+                            tempLink.size = keyvalue[1];
+                    });
+
+                    distLinks.push(tempLink);
+                }
+            });
+
+            tableWithLinks.fnClearTable();
+            tableWithLinks.fnAddData(distLinks);
 
         });
 
@@ -211,13 +230,15 @@
                             <div style="padding: 5px">
                                 <table class="table table-striped" id="tableLinks"></table>
                             </div>
-                            <button class="btn btn-default" id="addLinkButton"><spring:message
-                                    code="distribution.add_link"></spring:message></button>
+                            <button class="btn btn-default" data-toggle="modal" data-target="#addLinkModal">
+                                <spring:message
+                                        code="distribution.add_link"></spring:message></button>
                         </div>
                         <div role="tabpanel" class="tab-pane fade" id="asText">
-                            <textarea id="linksAsText" class="form-control" rows="10" wrap="off" style="margin: 5px"></textarea>
+                            <textarea id="linksAsText" class="form-control" rows="10" wrap="off"
+                                      style="margin: 5px"></textarea>
                             <button class="btn btn-default" id="addLinksButton"><spring:message
-                                    code="distribution.add_links"></spring:message> </button>
+                                    code="distribution.add_links"></spring:message></button>
                         </div>
                     </div>
                 </div>
@@ -231,6 +252,35 @@
             </div>
         </div>
 
+    </div>
+</div>
 
+<%--Dialog box to add link--%>
+<div class="modal fade" id="addLinkModal" tabindex="-1" role="dialog" aria-labelledby="linkModal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="linkModal"><spring:message code="distribution.add_link"/></h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="newLinkInput"><spring:message code="distribution.link"/> </label>
+                    <input type="text" class="form-control" id="newLinkInput">
+                </div>
+                <div class="form-group">
+                    <label for="newLinkPositionInput"><spring:message code="distribution.link_position"/> </label>
+                    <input type="text" class="form-control" id="newLinkPositionInput">
+                </div>
+                <div class="form-group">
+                    <label for="newLinkNameInput"><spring:message code="distribution.link_name"/> </label>
+                    <input type="text" class="form-control" id="newLinkNameInput">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn" data-dismiss="modal"><spring:message code="global.close"/></button>
+                <button type="button" class="btn btn-default" id="addLinkButton"><spring:message
+                        code="global.add"/></button>
+            </div>
+        </div>
     </div>
 </div>
