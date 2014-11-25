@@ -63,6 +63,26 @@
 
         });
 
+        $("#addLinkButton").click(function () {
+            var tempLink = new Object();
+            tempLink.position = $("#newLinkPositionInput").val();
+            tempLink.name = $("#newLinkNameInput").val();
+            tempLink.magnet = $("#newLinkInput").val();
+            tempLink.size = 0;
+
+            var params = tempLink.magnet.split("&");
+            $.each(params, function (index, value) {
+                var keyvalue = value.split("=");
+                if (keyvalue[0] == "dl")
+                    tempLink.size = keyvalue[1];
+            });
+
+            distLinks.push(tempLink);
+
+            tableWithLinks.fnClearTable();
+            tableWithLinks.fnAddData(distLinks);
+        });
+
         $("#createDistrButton").click(function () {
 
             var hasEmpty = false;
@@ -236,13 +256,16 @@
                             </div>
                             <button class="btn btn-default" data-toggle="modal" data-target="#addLinkModal">
                                 <spring:message
-                                        code="distribution.add_link"></spring:message></button>
+                                        code="distribution.add_link"></spring:message>
+                            </button>
                         </div>
                         <div role="tabpanel" class="tab-pane fade" id="asText">
                             <textarea id="linksAsText" class="form-control" rows="10" wrap="off"
                                       style="margin: 5px"></textarea>
-                            <button class="btn btn-default" id="addLinksButton"><spring:message
-                                    code="distribution.add_links"></spring:message></button>
+                            <button class="btn btn-default" id="addLinksButton">
+                                <spring:message
+                                        code="distribution.add_links"></spring:message>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -282,8 +305,10 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn" data-dismiss="modal"><spring:message code="global.close"/></button>
-                <button type="button" class="btn btn-default" id="addLinkButton"><spring:message
-                        code="global.add"/></button>
+                <button type="button" class="btn btn-default" id="addLinkButton">
+                    <spring:message
+                            code="global.add"/>
+                </button>
             </div>
         </div>
     </div>
