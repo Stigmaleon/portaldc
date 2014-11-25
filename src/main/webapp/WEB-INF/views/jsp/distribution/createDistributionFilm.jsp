@@ -79,6 +79,9 @@
                 }
             });
 
+            if (distLinks == undefined || distLinks.length == 0)
+                hasEmpty = true;
+
             if (!hasEmpty) {
                 film.name = $("#filmName").val();
                 film.nativeName = $("#filmNameNative").val();
@@ -89,6 +92,7 @@
                 film.linkKinopoisk = $("#filmLinkImdb").val();
                 film.linkImdb = $("#filmLinkKinopoisk").val();
                 film.description = $("#filmDescription").val();
+                film.links = distLinks;
 
                 $.ajax({
                     url: "createFilmDistribution",

@@ -20,6 +20,7 @@ public class LinkDAOImpl implements LinkDAO {
 
     @Override
     public void saveLinks(List<Link> links) {
-        sessionFactory.getCurrentSession().save(links);
+        for (Link link : links)
+            sessionFactory.getCurrentSession().save(link);
     }
 }
