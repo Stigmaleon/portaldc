@@ -1,8 +1,7 @@
-package com.portaldc.web.distribution.film;
+package com.portaldc.web.distribution.audio;
 
-import com.portaldc.api.data.DistributionState;
-import com.portaldc.api.dto.distibution.film.FilmDTO;
-import com.portaldc.api.service.distribution.film.FilmService;
+import com.portaldc.api.dto.distibution.audio.AudioDTO;
+import com.portaldc.api.service.distribution.audio.AudioService;
 import com.portaldc.web.AppController;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.annotation.Secured;
@@ -13,20 +12,19 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
-public class FilmDistributionController extends AppController{
+public class AudioDistributionController extends AppController {
 
     @Autowired
-    FilmService filmService;
+    AudioService audioService;
 
     @Secured(value = "ROLE_USER")
-    @RequestMapping(value = "/createFilmDistribution",
+    @RequestMapping(value = "/createAudioDistribution",
                     method = RequestMethod.POST,
                     headers = "Accept=application/json")
-    public @ResponseBody Long createFilmDistribution(@RequestBody FilmDTO filmDTO){
+    public @ResponseBody Long createAudioDistribution(@RequestBody AudioDTO audioDTO) {
 
-        filmDTO.setUser(getUserId());
+        audioDTO.setUser(getUserId());
 
-        return filmService.saveFilm(filmDTO);
+        return audioService.saveAudio(audioDTO);
     }
-
 }

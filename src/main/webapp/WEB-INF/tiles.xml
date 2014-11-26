@@ -25,4 +25,8 @@
 	<definition name="createDistributionFilm" extends="baseLayout">
 		<put-attribute name="body" value="/WEB-INF/views/jsp/distribution/createDistributionFilm.jsp" />
 	</definition>
+
+    <definition name="createDistributionAudio" extends="baseLayout">
+        <put-attribute name="body" value="/WEB-INF/views/jsp/distribution/createDistributionAudio.jsp" />
+    </definition>
 </tiles-definitions>

@@ -6,18 +6,20 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 
 @Controller
-public class AppController
-{
-    protected Long getUserId(){
+public class AppController {
+
+    private static final String HOME_PAGE = "home";
+
+    protected Long getUserId() {
 
         return getCurrentUser().getId();
     }
 
-    protected SysUserDetails getCurrentUser(){
+    protected SysUserDetails getCurrentUser() {
 
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 
-        return  (SysUserDetails)authentication.getPrincipal();
+        return (SysUserDetails) authentication.getPrincipal();
     }
-	
+
 }

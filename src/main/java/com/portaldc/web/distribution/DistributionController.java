@@ -9,11 +9,18 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class DistributionController {
 
     private static final String CREATE_DISTRIBUTION_FILM_PAGE = "createDistributionFilm";
+    private static final String CREATE_DISTRIBUTION_AUDIO_PAGE = "createDistributionAudio";
 
     @Secured(value = "ROLE_USER")
     @RequestMapping(value = "/create_distribution_film", method = RequestMethod.GET)
-    public String createDistribution() {
+    public String createFilmDistribution() {
         return CREATE_DISTRIBUTION_FILM_PAGE;
+    }
+
+    @Secured(value = "ROLE_USER")
+    @RequestMapping(value = "/create_distribution_audio", method = RequestMethod.GET)
+    public String createAudioDistribution(){
+        return CREATE_DISTRIBUTION_AUDIO_PAGE;
     }
 
 }

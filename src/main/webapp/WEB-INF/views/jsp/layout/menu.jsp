@@ -46,6 +46,8 @@ $(function(){
     $("#chooseCategoryButton").click(function(){
         if($("#modalSelectDistrType").val() == 1)
             window.location.href = "create_distribution_film";
+		else if ($("#modalSelectDistrType").val() == 2)
+			window.location.href = "create_distribution_audio";
     });
 });
 	
