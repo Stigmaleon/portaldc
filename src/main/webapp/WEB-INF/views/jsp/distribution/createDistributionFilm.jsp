@@ -160,7 +160,7 @@
                     code="distribution.native_name"/></label>
 
             <div class="col-md-9">
-                <input type="text" id="filmNameNative" class="form-control not-empty" accept="image/*">
+                <input type="text" id="filmNameNative" class="form-control not-empty">
             </div>
         </div>
 
@@ -169,7 +169,7 @@
                     code="distribution.poster"/></label>
 
             <div class="col-md-9">
-                <input type="file" name="poster" id="filmPoster" class="form-control not-empty">
+                <input type="file" name="poster" id="filmPoster" class="form-control not-empty" accept="image/*">
             </div>
         </div>
 
