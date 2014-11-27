@@ -31,7 +31,6 @@ public class AudioDTOFactory {
             audio.setLinks(linkDTOFactory.createModels(dto.getLinks()));
             audio.setName(dto.getName());
             audio.setNativeName(dto.getNativeName());
-            audio.setGanre(dto.getGanre());
             audio.setState(dto.getState());
             audio.setYear(dto.getYear());
             audio.setUser(userDAO.findUserById(dto.getUser()));

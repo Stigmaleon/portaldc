@@ -4,7 +4,7 @@ import com.portaldc.api.dto.distibution.DistributionDTO;
 
 public class AudioDTO extends DistributionDTO {
 
-    public String time;
+    private String time;
 
     public String getTime() {
         return time;

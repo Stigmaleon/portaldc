@@ -11,6 +11,7 @@
         <mapping class="com.portaldc.api.model.distributions.Distribution" />
         <mapping class="com.portaldc.api.model.distributions.Film" />
         <mapping class="com.portaldc.api.model.distributions.Audio" />
+        <mapping class="com.portaldc.api.model.distributions.Book" />
         <mapping class="com.portaldc.api.model.distributions.link.Link" />
 
 	</session-factory>
