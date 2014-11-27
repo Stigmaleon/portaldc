@@ -10,6 +10,7 @@ public class DistributionController {
 
     private static final String CREATE_DISTRIBUTION_FILM_PAGE = "createDistributionFilm";
     private static final String CREATE_DISTRIBUTION_AUDIO_PAGE = "createDistributionAudio";
+    private static final String CREATE_DISTRIBUTIO_BOOK_PAGE = "createDistributionBook";
 
     @Secured(value = "ROLE_USER")
     @RequestMapping(value = "/create_distribution_film", method = RequestMethod.GET)
@@ -19,8 +20,14 @@ public class DistributionController {
 
     @Secured(value = "ROLE_USER")
     @RequestMapping(value = "/create_distribution_audio", method = RequestMethod.GET)
-    public String createAudioDistribution(){
+    public String createAudioDistribution() {
         return CREATE_DISTRIBUTION_AUDIO_PAGE;
+    }
+
+    @Secured(value = "ROLE_USER")
+    @RequestMapping(value = "/create_distribution_book", method = RequestMethod.GET)
+    public String createBookDistribution() {
+        return CREATE_DISTRIBUTIO_BOOK_PAGE;
     }
 
 }
