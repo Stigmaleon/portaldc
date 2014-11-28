@@ -33,4 +33,8 @@
     <definition name="createDistributionBook" extends="baseLayout">
         <put-attribute name="body" value="/WEB-INF/views/jsp/distribution/createDistributionBook.jsp" />
     </definition>
+
+    <definition name="createDistributionGame" extends="baseLayout">
+        <put-attribute name="body" value="/WEB-INF/views/jsp/distribution/createDistributionGame.jsp" />
+    </definition>
 </tiles-definitions>

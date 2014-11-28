@@ -8,7 +8,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "distribution")
 @DiscriminatorValue(value = "audio")
-public class Audio  extends Distribution{
+public class Audio extends Distribution {
 
     @Column(name = "time")
     private String time;

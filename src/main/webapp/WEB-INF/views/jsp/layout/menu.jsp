@@ -48,6 +48,8 @@ $(function(){
             window.location.href = "create_distribution_film";
 		else if ($("#modalSelectDistrType").val() == 2)
 			window.location.href = "create_distribution_audio";
+		else if ($("#modalSelectDistrType").val() == 3)
+			window.location.href = "create_distribution_game";
 		else if ($("#modalSelectDistrType").val() == 4)
 			window.location.href = "create_distribution_book";
     });
