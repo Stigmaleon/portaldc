@@ -17,17 +17,17 @@ import java.util.List;
 
 @Service
 public class UserServiceImpl implements UserService {
-	@Autowired
-	UserDAO userDAO;
+    @Autowired
+    UserDAO userDAO;
 
     @Autowired
     RoleDAO roleDAO;
 
-	UserDTOFactory userFactory = new UserDTOFactory();
+    UserDTOFactory userFactory = new UserDTOFactory();
 
-	@Override
-	@Transactional
-	public UserDTO saveNewUser(UserDTO userDTO) {
+    @Override
+    @Transactional
+    public UserDTO saveNewUser(UserDTO userDTO) {
 
         List<Role> roles = new ArrayList<Role>();
         List<Role> settingRoles = new ArrayList<Role>();
@@ -35,23 +35,32 @@ public class UserServiceImpl implements UserService {
         User user = new User();
 
         roles = roleDAO.getRoles();
-		user = userFactory.createModel(userDTO);
-		userDAO.addUser(user);
-        for(Role r : roles){
-            if(r.getName() .equals("ROLE_USER"))
+        user = userFactory.createModel(userDTO);
+        userDAO.addUser(user);
+        for (Role r : roles) {
+            if (r.getName().equals("ROLE_USER"))
                 settingRole = r;
         }
         settingRoles.add(settingRole);
         user.setRoles(settingRoles);
-		return userFactory.createDTO(user);
-	}
-	
-	@Override
-	@Transactional
-	public UserDTO getUser(String login) {
-		
-		User user = userDAO.findUserByLogin(login);
-		return userFactory.createDTO(user);
-	}
+        return userFactory.createDTO(user);
+    }
+
+    @Override
+    @Transactional
+    public UserDTO getUser(String login) {
+
+        User user = userDAO.findUserByLogin(login);
+        return userFactory.createDTO(user);
+    }
+
+    @Override
+    @Transactional
+    public UserDTO getUserById(Long userId) {
+
+        User user = userDAO.findUserById(userId);
+        return userFactory.createDTO(user);
+    }
+
 
 }

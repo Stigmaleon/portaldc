@@ -37,4 +37,8 @@
     <definition name="createDistributionGame" extends="baseLayout">
         <put-attribute name="body" value="/WEB-INF/views/jsp/distribution/createDistributionGame.jsp" />
     </definition>
+
+    <definition name="profile" extends="baseLayout">
+        <put-attribute name="body" value="/WEB-INF/views/jsp/profile/profileUser.jsp" />
+    </definition>
 </tiles-definitions>

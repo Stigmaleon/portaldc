@@ -6,4 +6,6 @@ public interface UserService {
     public UserDTO saveNewUser(UserDTO userDTO);
 
     public UserDTO getUser(String login);
+
+    public UserDTO getUserById(Long userId);
 }

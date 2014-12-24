@@ -89,3 +89,13 @@ var GameDistribution = function gameDistribution(
     this.language = language;
     this.translate = translate;
 };
+
+var UserProfile = function userProfile(
+    login,
+    email,
+    role
+){
+    this.login = login;
+    this.email = email;
+    this.role = role;
+};
