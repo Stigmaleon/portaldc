@@ -18,9 +18,8 @@ import com.portaldc.api.model.security.SysUserDetails;
 @Controller
 public class RedirectController {
 
-    private static final String HOME_PAGE = "home";
-    private static final String REGISTR_PAGE = "register";
-    private static final String PROFILE_PAGE = "profile";
+    private static final String HOME_PAGE = "index.jsp";
+    private static final String REGISTR_PAGE = "register.jsp";
 
     @RequestMapping(value = "/", method = {RequestMethod.GET, RequestMethod.POST})
     public String index(ModelMap modelMap) throws Exception {
@@ -48,21 +47,6 @@ public class RedirectController {
         }
 
         return REGISTR_PAGE;
-    }
-
-    @RequestMapping(value = "/home", method = RequestMethod.GET)
-    public String home() {
-        return HOME_PAGE;
-    }
-
-    @RequestMapping(value = "/register", method = RequestMethod.GET)
-    public String register() {
-        return REGISTR_PAGE;
-    }
-
-    @RequestMapping(value = "/profile", method = RequestMethod.GET)
-    public String profile() {
-        return PROFILE_PAGE;
     }
 
 }

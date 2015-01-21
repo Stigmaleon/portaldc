@@ -38,7 +38,7 @@ public class User extends Identificator {
     List<Distribution> distributions;
 
     @JsonIgnore
-    @ManyToMany(fetch = FetchType.EAGER)
+    @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(
             name = "user_role",
             joinColumns = {@JoinColumn(name = "userid")},

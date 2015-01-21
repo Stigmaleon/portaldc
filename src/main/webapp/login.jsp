@@ -8,7 +8,7 @@
 
 <link href="resources/css/bootstrap.css" rel="stylesheet">
 <link href="resources/css/global.css" rel="stylesheet">
-<script src="resources/js/jquery.js"></script>
+<script src="resources/js/libs/jquery.js"></script>
 
 <style type="text/css">
 body {
@@ -58,8 +58,9 @@ body {
 </style>
 <script type="text/javascript">
 $(function(){
+
 	$("#button_register").click(function(){
-    	window.location.href = "register";
+    	window.location.href = "register.jsp";
     });
 });    
 </script>

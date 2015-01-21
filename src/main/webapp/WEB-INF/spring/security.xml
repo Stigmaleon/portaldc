@@ -7,7 +7,7 @@
 				http://www.springframework.org/schema/security/spring-security-3.2.xsd">
 	
 	<http security="none" pattern="/login.jsp"/>
-	<http security="none" pattern="/register"/>
+	<http security="none" pattern="/register.jsp"/>
     <http security="none" pattern="/user/register"/>
 	<http security="none" pattern="/resources/**"/>
 	<http access-denied-page="/error403.jsp">		

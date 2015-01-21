@@ -2,11 +2,7 @@ package com.portaldc.api.model.role;
 
 import java.util.List;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.ManyToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 import org.codehaus.jackson.annotate.JsonIgnore;
 
@@ -21,7 +17,7 @@ public class Role extends Identificator {
     private String name;
 
     @JsonIgnore
-    @ManyToMany(fetch = FetchType.EAGER, mappedBy = "roles")
+    @ManyToMany(fetch = FetchType.LAZY, mappedBy = "roles")
     private List<User> users;
 
     public String getName() {
@@ -39,5 +35,4 @@ public class Role extends Identificator {
     public void setUsers(List<User> users) {
         this.users = users;
     }
-
 }
