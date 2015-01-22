@@ -6,6 +6,7 @@
 
     <script src="resources/js/libs/jquery.js"></script>
     <script src="resources/js/libs/bootstrap.js"></script>
+    <%--<script src="resources/js/libs/bootstrap.min.js"></script>--%>
 
     <script src="resources/js/libs/angular/angular.js"></script>
     <script src="resources/js/libs/angular/angular-route.js"></script>
@@ -13,6 +14,8 @@
 
     <script src="resources/js/controller/main.js"></script>
     <script src="resources/js/controller/home.js"></script>
+
+    <script src="resources/js/directives.js"></script>
 
     <script src="resources/js/app.js"></script>
 </head>

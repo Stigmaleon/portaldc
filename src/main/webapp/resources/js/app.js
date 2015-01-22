@@ -2,7 +2,8 @@
 
 angular.module('portalDC', [
     'ngRoute',
-    'portalDC.controllers'
+    'portalDC.controllers',
+    'portalDC.directives'
 ])
     .config(['$routeProvider', function ($routeProvider) {
 
