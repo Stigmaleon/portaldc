@@ -1,9 +1,13 @@
 'use strict';
 
 angular.module('portalDC', [
+    'ngAnimate',
     'ngRoute',
+    'ngCookies',
+    'pascalprecht.translate',
     'portalDC.controllers',
-    'portalDC.directives'
+    'portalDC.directives',
+    'portalDC.factories'
 ])
     .config(['$routeProvider', function ($routeProvider) {
 
@@ -19,4 +23,14 @@ angular.module('portalDC', [
                 templateUrl: 'resources/html/home.html',
                 controller: 'HomeCtrl'
             })
-    }]);
+    }])
+    .config(function ($translateProvider) {
+
+        $translateProvider.preferredLanguage('ru')
+        .useStaticFilesLoader({
+            prefix: "/get_localization_message/",
+            suffix: ""
+        })
+        .useLocalStorage();
+
+    });

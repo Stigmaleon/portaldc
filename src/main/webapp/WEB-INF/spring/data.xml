@@ -1,10 +1,11 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns:jee="http://www.springframework.org/schema/jee" 
+       xmlns:jee="http://www.springframework.org/schema/jee"
        xmlns:lang="http://www.springframework.org/schema/lang"
-       xmlns:p="http://www.springframework.org/schema/p" 
+       xmlns:p="http://www.springframework.org/schema/p"
        xmlns:tx="http://www.springframework.org/schema/tx"
-       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:util="http://www.springframework.org/schema/util" xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:beans="http://www.springframework.org/schema/beans"
        xsi:schemaLocation="http://www.springframework.org/schema/beans 
        		http://www.springframework.org/schema/beans/spring-beans.xsd   
        		http://www.springframework.org/schema/jee 
@@ -14,7 +15,37 @@
        		http://www.springframework.org/schema/tx 
        		http://www.springframework.org/schema/tx/spring-tx.xsd 
        		http://www.springframework.org/schema/util 
-       		http://www.springframework.org/schema/util/spring-util.xsd">
+       		http://www.springframework.org/schema/util/spring-util.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+    <beans:bean id="localeChangeInterceptor"
+                class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
+        <beans:property name="paramName" value="lang" />
+    </beans:bean>
+
+    <mvc:interceptors>
+        <bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
+            <property name="paramName" value="lang" />
+        </bean>
+    </mvc:interceptors>
+    
+    <bean id="localeResolver" class="org.springframework.web.servlet.i18n.CookieLocaleResolver">
+        <property name="defaultLocale" value="ru" />
+    </bean>
+
+    <beans:bean id="handlerMapping" class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping">
+        <beans:property name="interceptors">
+            <beans:ref bean="localeChangeInterceptor" />
+        </beans:property>
+    </beans:bean>
+
+    <beans:bean id="messageService" class="com.portaldc.impl.service.message.MessageServiceImpl">
+        <beans:constructor-arg>
+            <beans:list>
+                <beans:value>ru.json</beans:value>
+                <beans:value>en.json</beans:value>
+            </beans:list>
+        </beans:constructor-arg>
+    </beans:bean>
 
     <bean id="messageSource"
           class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
