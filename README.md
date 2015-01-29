@@ -3,4 +3,4 @@ Application for work with distribution for DC. Will have functionality to add, m
 Version: 0.1(in develop).
 
 
-Technologies: Java, Spring, Hibernate, Jquery, Boostrap.
+Technologies: Java, Spring, Hibernate, AngularJS, Boostrap.
