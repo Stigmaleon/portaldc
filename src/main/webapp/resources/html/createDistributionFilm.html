@@ -1,0 +1,104 @@
+<header-template></header-template>
+
+<div class="globalMainSection container-fluid" ng-controller="CreateFilmCtrl">
+    <h3 class="col-md-offset-3">{{'distribution.create_new' | translate}}</h3>
+    <br>
+
+    <form class="form-horizontal">
+        <div class="form-group">
+            <label class="col-md-offset-3 col-md-2 control-label" for="distName">
+                {{'distribution.name' | translate}}
+            </label>
+
+            <div class="col-md-3">
+                <input class="form-control" type="text" id="distName" ng-model="film.name">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-md-offset-3 col-md-2 control-label" for="distNativeName">
+                {{'distribution.native_name' | translate}}
+            </label>
+
+            <div class="col-md-3">
+                <input class="form-control" type="text" id="distNativeName" ng-model="film.nativeName">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-md-offset-3 col-md-2 control-label" for="distYear">
+                {{'distribution.year' | translate}}
+            </label>
+
+            <div class="col-md-3">
+                <input class="form-control" type="text" id="distYear" ng-model="film.year">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-md-offset-3 col-md-2 control-label" for="distGanre">
+                {{'distribution.ganre' | translate}}
+            </label>
+
+            <div class="col-md-3">
+                <input class="form-control" type="text" id="distGanre" ng-model="film.ganre">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-md-offset-3 col-md-2 control-label" for="distCountry">
+                {{'distribution.country' | translate}}
+            </label>
+
+            <div class="col-md-3">
+                <input class="form-control" type="text" id="distCountry" ng-model="film.country">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-md-offset-3 col-md-2 control-label" for="distTime">
+                {{'distribution.time' | translate}}
+            </label>
+
+            <div class="col-md-3">
+                <input class="form-control" type="text" id="distTime" ng-model="film.time">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-md-offset-3 col-md-2 control-label" for="distLinkImdb">
+                {{'distribution.linkImdb' | translate}}
+            </label>
+
+            <div class="col-md-3">
+                <input class="form-control" type="text" id="distLinkimdb" ng-model="film.linkImdb">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-md-offset-3 col-md-2 control-label" for="distLinkKinopoisk">
+                {{'distribution.linkKinopoisk' | translate}}
+            </label>
+
+            <div class="col-md-3">
+                <input class="form-control" type="text" id="distLinkKinopoisk" ng-model="film.linkKinopoisk">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-md-offset-3 col-md-2 control-label" for="distDescription">
+                {{'distribution.description' | translate}}
+            </label>
+
+            <div class="col-md-3">
+                <textarea id="distDescription" ng-wig="film.description"></textarea>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-7 col-md-1">
+                <button class="btn btn-primary col-md-12" ng-click="saveFilmDistribution()">{{'distribution.create' | translate}}</button>
+            </div>
+        </div>
+    </form>
+</div>

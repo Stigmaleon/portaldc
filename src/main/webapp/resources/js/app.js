@@ -5,7 +5,10 @@ angular.module('portalDC', [
     'ngRoute',
     'ngCookies',
     'pascalprecht.translate',
+    'ngWig',
+    'ui.bootstrap',
     'portalDC.controllers',
+    'portalDC.services',
     'portalDC.directives',
     'portalDC.factories'
 ])
@@ -16,8 +19,9 @@ angular.module('portalDC', [
                 templateUrl: 'resources/html/home.html',
                 controller: 'HomeCtrl'
             })
-            .when('/create_distribution', {
-                templateUrl: 'resources/html/createDistribution.html'
+            .when('/create_distribution_film', {
+                templateUrl: 'resources/html/createDistributionFilm.html',
+                controller: 'CreateFilmCtrl'
             })
             .otherwise({
                 templateUrl: 'resources/html/home.html',

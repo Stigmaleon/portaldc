@@ -30,7 +30,8 @@ public class FilmDTOFactory {
             film.setGanre(dto.getGanre());
             if(dto.getId() != null)
                 film.setId(dto.getId());
-            film.setLinks(linkDTOFactory.createModels(dto.getLinks()));
+//TODO add save link
+//            film.setLinks(linkDTOFactory.createModels(dto.getLinks()));
             film.setName(dto.getName());
             film.setNativeName(dto.getNativeName());
             film.setGanre(dto.getGanre());

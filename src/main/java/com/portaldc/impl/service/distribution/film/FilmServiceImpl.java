@@ -33,8 +33,9 @@ public class FilmServiceImpl implements FilmService {
             film = filmDTOFactory.createModel(filmDTO);
             savedFilmId = filmDAO.saveDistribution(film);
             film.setId(savedFilmId);
-
-            linkService.saveLinks(filmDTO.getLinks(), film);
+//TODO add save links
+//TODO check null for links
+//            linkService.saveLinks(filmDTO.getLinks(), film);
 
             return savedFilmId;
         } else

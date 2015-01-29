@@ -1,7 +1,13 @@
 {
   "global.close" : "Закрыть",
   "global.choose" : "Выбрать",
+  "global.create" : "Создать",
   "global.add" : "Добавить",
+  "global.audio": "Аудио",
+  "global.games": "Игры",
+  "global.films": "Фильмы",
+  "global.serials": "Сериалы",
+  "global.books": "Книги",
 
   "main.login" : "Логин",
   "main.password" : "Пароль",
@@ -26,7 +32,8 @@
   "global_menu.create_distribution" : "Создать раздачу",
   "global_menu.view_distributions" : "Посмотреть мои раздачи",
 
-  "distribution.select_type" : "Выберите тип раздачи",
+  "distribution.create_new" : "Создать новую раздачу:",
+  "distribution.select_type" : "Тип раздачи",
   "distribution.name" : "Название:",
   "distribution.native_name" : "Название на языке оригинала:",
   "distribution.year" : "Год:",
