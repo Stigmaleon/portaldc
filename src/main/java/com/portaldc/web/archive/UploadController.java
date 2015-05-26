@@ -13,12 +13,13 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 import java.io.IOException;
 
 @Controller
+@RequestMapping(value = "/upload")
 public class UploadController {
     @Autowired
     DistributionArchiveService distributionArchiveService;
 
     @Secured(value = "ROLE_USER")
-    @RequestMapping(value = "/upload/distribution/poster/{distId}",
+    @RequestMapping(value = "/distribution/poster/{distId}",
             method = RequestMethod.POST,
             headers = "Accept=*/*")
     public
