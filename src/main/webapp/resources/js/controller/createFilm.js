@@ -5,6 +5,7 @@ main.controller("CreateFilmCtrl", ['$scope', '$location', 'DistributionSrvc', fu
     $scope.saveFilmDistribution = function () {
 
         $scope.film.link = null;
+
         DistributionSrvc.createFilmDistribution($scope.film)
             .then(function (response) {
                 $location.path("/");
@@ -12,5 +13,9 @@ main.controller("CreateFilmCtrl", ['$scope', '$location', 'DistributionSrvc', fu
                 //add error message
             });
     };
+
+    $scope.$watch('film.poster', function(newPoster) {
+        console.log(newPoster);
+    })
 
 }]);
