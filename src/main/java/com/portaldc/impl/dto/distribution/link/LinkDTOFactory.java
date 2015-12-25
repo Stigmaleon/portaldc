@@ -23,7 +23,7 @@ public class LinkDTOFactory {
     }
 
     public List<Link> createModels(List<LinkDTO> linkDTOs) {
-        List<Link> links = new ArrayList<Link>();
+        List<Link> links = new ArrayList<>();
 
         for (LinkDTO linkDTO : linkDTOs) {
             links.add(createModel(linkDTO));

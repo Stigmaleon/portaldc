@@ -11,7 +11,7 @@ public class CategoryDTOFactory {
 	
 	public List<CategoryDTO> createDTOs(List<Category> categories){
 		
-		List<CategoryDTO> categoryDTOs = new ArrayList<CategoryDTO>();
+		List<CategoryDTO> categoryDTOs = new ArrayList<>();
 		
 		if (categories != null) {			
 			

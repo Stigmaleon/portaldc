@@ -30,7 +30,7 @@
     <script src="resources/js/controller/header.js"></script>
     <script src="resources/js/controller/translate.js"></script>
     <script src="resources/js/controller/home.js"></script>
-    <script src="resources/js/controller/createFilm.js"></script>
+    <script src="resources/js/controller/distribution/film/createFilm.js"></script>
 
     <script src="resources/js/service/main.js"></script>
     <script src="resources/js/service/distribution.js"></script>

@@ -44,13 +44,14 @@ $(function(){
 	});
 
     $("#chooseCategoryButton").click(function(){
-        if($("#modalSelectDistrType").val() == 1)
+		var distributionType = $("#modalSelectDistType").val();
+        if(distributionType == 1)
             window.location.href = "create_distribution_film";
-		else if ($("#modalSelectDistrType").val() == 2)
+		else if (distributionType == 2)
 			window.location.href = "create_distribution_audio";
-		else if ($("#modalSelectDistrType").val() == 3)
+		else if (distributionType == 3)
 			window.location.href = "create_distribution_game";
-		else if ($("#modalSelectDistrType").val() == 4)
+		else if (distributionType == 4)
 			window.location.href = "create_distribution_book";
     });
 });
