@@ -37,7 +37,7 @@
             var linksFromTextArea = $("#linksAsText").val().split("\n");
             $.each(linksFromTextArea, function (index, value) {
                 if (value.length > 0) {
-                    var tempLink = new Object();
+                    var tempLink = {};
                     tempLink.position = index;
                     tempLink.magnet = value;
                     tempLink.name = "";
@@ -63,7 +63,7 @@
         });
 
         $("#addLinkButton").click(function () {
-            var tempLink = new Object();
+            var tempLink = {};
             tempLink.position = $("#newLinkPositionInput").val();
             tempLink.name = $("#newLinkNameInput").val();
             tempLink.magnet = $("#newLinkInput").val();
