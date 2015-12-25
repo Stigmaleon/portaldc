@@ -8,7 +8,7 @@
 
 <link href="resources/css/bootstrap.css" rel="stylesheet">
 <link href="resources/css/global.css" rel="stylesheet">
-<script src="resources/js/libs/jquery.js"></script>
+<script src="resources/libs/jquery.js"></script>
 
 <style type="text/css">
 body {
