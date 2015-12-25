@@ -23,16 +23,16 @@ public class UserServiceImpl implements UserService {
     @Autowired
     RoleDAO roleDAO;
 
-    UserDTOFactory userFactory = new UserDTOFactory();
+    private UserDTOFactory userFactory = new UserDTOFactory();
 
     @Override
     @Transactional
     public UserDTO saveNewUser(UserDTO userDTO) {
 
-        List<Role> roles = new ArrayList<Role>();
-        List<Role> settingRoles = new ArrayList<Role>();
+        List<Role> roles;
+        List<Role> settingRoles = new ArrayList<>();
         Role settingRole = new Role();
-        User user = new User();
+        User user;
 
         roles = roleDAO.getRoles();
         user = userFactory.createModel(userDTO);

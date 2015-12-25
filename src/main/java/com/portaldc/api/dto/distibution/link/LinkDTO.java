@@ -6,7 +6,7 @@ import java.io.Serializable;
 
 public class LinkDTO implements Serializable {
 
-    public Integer position;
+    private Integer position;
     private String name;
     private String magnet;
     private Long size;

@@ -1,7 +1,6 @@
 package com.portaldc.web;
 
 import java.util.Collection;
-import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -32,11 +31,10 @@ public class RedirectController {
             modelMap.addAttribute("user", sysUserDetails.getUsername());
 
             if (grantedAuthorities != null) {
-                List<String> roleList = new LinkedList<String>();
-                Iterator<GrantedAuthority> grantedAuthorityIterator = grantedAuthorities.iterator();
+                List<String> roleList = new LinkedList<>();
 
-                while (grantedAuthorityIterator.hasNext()) {
-                    roleList.add(grantedAuthorityIterator.next().getAuthority());
+                for (GrantedAuthority grantedAuthority : grantedAuthorities) {
+                    roleList.add(grantedAuthority.getAuthority());
                 }
 
                 if (roleList.contains("ROLE_ADMIN"))

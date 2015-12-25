@@ -11,7 +11,6 @@ import javax.persistence.ManyToMany;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import com.portaldc.api.model.distributions.Distribution;
@@ -35,7 +34,7 @@ public class User extends Identificator {
     private String email;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
-    List<Distribution> distributions;
+    private List<Distribution> distributions;
 
     @JsonIgnore
     @ManyToMany(fetch = FetchType.LAZY)

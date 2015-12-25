@@ -1,15 +1,10 @@
 package com.portaldc.impl.dao.user;
 
-import java.util.List;
-
 import org.hibernate.Query;
 import org.hibernate.SessionFactory;
-import org.hibernate.criterion.Projections;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.expression.Expression;
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
 
 import com.portaldc.api.dao.user.UserDAO;
 import com.portaldc.api.model.user.User;

@@ -5,9 +5,6 @@ import com.portaldc.api.model.distributions.Distribution;
 
 import javax.persistence.*;
 
-/**
- * Created by Dmitry Romaniuk on 10.08.2014.
- */
 @Entity
 @Table(name = "links")
 public class Link extends Identificator {

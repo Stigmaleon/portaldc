@@ -5,7 +5,6 @@ import java.util.List;
 
 import com.portaldc.api.dto.category.CategoryDTO;
 import com.portaldc.api.model.category.Category;
-import com.portaldc.api.model.category.Subcategory;
 
 public class CategoryDTOFactory {
 	

@@ -6,6 +6,6 @@ import com.portaldc.api.dto.category.CategoryDTO;
 
 public interface CategoryService {
 
-    public List<CategoryDTO> getCategoriesDTO();
+    List<CategoryDTO> getCategoriesDTO();
 
 }

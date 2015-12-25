@@ -8,9 +8,6 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-/**
- * Created by xdra on 12.08.14.
- */
 @Repository
 public class RoleDAOImpl implements RoleDAO {
 

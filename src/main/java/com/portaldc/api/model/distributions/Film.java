@@ -2,10 +2,6 @@ package com.portaldc.api.model.distributions;
 
 import javax.persistence.*;
 
-/**
- * Created by Dmitry Romaniuk on 10.08.2014.
- */
-
 @Entity
 @Table(name = "distribution")
 @DiscriminatorValue(value = "film")

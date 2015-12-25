@@ -1,6 +1,5 @@
 package com.portaldc.impl.dto.distribution.audio;
 
-import com.portaldc.api.dao.distribution.link.LinkDAO;
 import com.portaldc.api.dao.user.UserDAO;
 import com.portaldc.api.dto.distibution.audio.AudioDTO;
 import com.portaldc.api.model.distributions.Audio;

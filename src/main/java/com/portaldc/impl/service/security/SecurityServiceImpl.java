@@ -24,7 +24,7 @@ public class SecurityServiceImpl implements UserDetailsService {
 	@Transactional
 	public UserDetails loadUserByUsername(String username)
 			throws UsernameNotFoundException {
-		User user = new User();
+		User user;
 
 		user = userDAO.findUserByLogin(username);
 		return prepareUser(user);

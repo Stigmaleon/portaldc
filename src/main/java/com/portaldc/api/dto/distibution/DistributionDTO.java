@@ -2,7 +2,6 @@ package com.portaldc.api.dto.distibution;
 
 import com.portaldc.api.dto.distibution.link.LinkDTO;
 import com.portaldc.api.model.category.Subcategory;
-import com.portaldc.api.model.distributions.link.Link;
 
 import java.io.Serializable;
 import java.util.List;

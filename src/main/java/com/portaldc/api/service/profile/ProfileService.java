@@ -4,5 +4,5 @@ import com.portaldc.api.dto.profile.ProfileDTO;
 
 public interface ProfileService {
 
-    public ProfileDTO getUserProfile(Long userId);
+    ProfileDTO getUserProfile(Long userId);
 }

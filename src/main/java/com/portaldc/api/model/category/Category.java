@@ -13,7 +13,7 @@ public class Category extends Identificator {
     private String name;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "category")
-    List<Subcategory> subcategories;
+    private List<Subcategory> subcategories;
 
     public String getName() {
         return name;

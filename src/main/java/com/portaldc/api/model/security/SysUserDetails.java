@@ -16,7 +16,7 @@ public class SysUserDetails implements UserDetails {
     public SysUserDetails() {
         username = null;
         password = null;
-        authorities = new HashSet<GrantedAuthority>();
+        authorities = new HashSet<>();
     }
 
     public Long getId() {

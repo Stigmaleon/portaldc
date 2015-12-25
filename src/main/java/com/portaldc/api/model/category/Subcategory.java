@@ -7,10 +7,6 @@ import com.portaldc.api.model.category.Category;
 import javax.persistence.*;
 import java.util.List;
 
-/**
- * Created by Dmitry Romaniuk on 10.08.2014.
- */
-
 @Entity
 @Table(name = "distribution_subcategory")
 public class Subcategory extends Identificator {

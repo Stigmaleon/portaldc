@@ -4,11 +4,11 @@ import com.portaldc.api.model.user.User;
 
 public interface UserDAO {
 
-    public void addUser(User user);
+    void addUser(User user);
 
-    public User findUserByLogin(String login);
+    User findUserByLogin(String login);
 
-    public User findUserById(Long id);
+    User findUserById(Long id);
 
 
 }

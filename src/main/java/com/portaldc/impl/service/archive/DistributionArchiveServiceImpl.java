@@ -17,7 +17,7 @@ public class DistributionArchiveServiceImpl implements DistributionArchiveServic
     @Value("${application.archive_path}")
     private String ARCHIVE_PATH;
 
-    Logger logger = LoggerFactory.getLogger(DistributionArchiveServiceImpl.class);
+    private Logger logger = LoggerFactory.getLogger(DistributionArchiveServiceImpl.class);
 
     @Override
     public void savePoster(MultipartHttpServletRequest request, Long distributionId) {

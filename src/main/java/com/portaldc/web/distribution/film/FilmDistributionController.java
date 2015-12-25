@@ -1,6 +1,5 @@
 package com.portaldc.web.distribution.film;
 
-import com.portaldc.api.data.DistributionState;
 import com.portaldc.api.dto.distibution.film.FilmDTO;
 import com.portaldc.api.service.distribution.film.FilmService;
 import com.portaldc.web.AppController;

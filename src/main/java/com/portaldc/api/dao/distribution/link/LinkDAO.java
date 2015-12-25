@@ -6,8 +6,8 @@ import java.util.List;
 
 public interface LinkDAO {
 
-    public void saveLinks(Link link);
+    void saveLinks(Link link);
 
-    public void saveLinks(List<Link> links);
+    void saveLinks(List<Link> links);
 
 }

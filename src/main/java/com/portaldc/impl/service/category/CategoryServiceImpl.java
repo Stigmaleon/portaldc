@@ -3,7 +3,6 @@ package com.portaldc.impl.service.category;
 import java.util.List;
 
 import com.portaldc.api.model.category.Category;
-import com.portaldc.api.model.category.Subcategory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -19,7 +18,7 @@ public class CategoryServiceImpl implements CategoryService{
 	@Autowired
 	CategoryDAO categoryDAO;
 	
-	CategoryDTOFactory categoryFactory = new CategoryDTOFactory();
+	private CategoryDTOFactory categoryFactory = new CategoryDTOFactory();
 	
 	@Override
 	@Transactional

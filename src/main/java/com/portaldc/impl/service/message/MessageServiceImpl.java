@@ -8,7 +8,7 @@ public class MessageServiceImpl {
     private Map<String, String> mapOfLanguages;
 
     public MessageServiceImpl(List<String> listOfLanguages) throws UnsupportedEncodingException {
-        mapOfLanguages = new HashMap<String, String>();
+        mapOfLanguages = new HashMap<>();
 
         for (String languageName : listOfLanguages) {
             InputStream inputStream = getClass().getResourceAsStream("/" + languageName);

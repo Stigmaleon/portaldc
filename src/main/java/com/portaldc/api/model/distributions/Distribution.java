@@ -9,10 +9,6 @@ import com.portaldc.api.model.user.User;
 import javax.persistence.*;
 import java.util.List;
 
-/**
- * Created by Dmitry Romaniuk on 10.08.2014.
- */
-
 @Entity
 @Table(name = "distribution")
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
