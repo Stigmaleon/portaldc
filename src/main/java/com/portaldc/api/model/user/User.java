@@ -13,8 +13,8 @@ import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.portaldc.api.model.distributions.Distribution;
-import org.codehaus.jackson.annotate.JsonIgnore;
 
 import com.portaldc.api.model.Identificator;
 import com.portaldc.api.model.role.Role;
@@ -40,8 +40,8 @@ public class User extends Identificator {
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(
             name = "user_role",
-            joinColumns = {@JoinColumn(name = "userid")},
-            inverseJoinColumns = {@JoinColumn(name = "roleid")})
+            joinColumns = {@JoinColumn(name = "user_id")},
+            inverseJoinColumns = {@JoinColumn(name = "role_id")})
     private List<Role> roles;
 
     public String getLogin() {

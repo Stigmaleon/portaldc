@@ -18,7 +18,7 @@ public class CategoryDAOImpl implements CategoryDAO{
 	
 	@Override
 	public List<Category> getCategories() {
-		return (List<Category>) sessionFactory.getCurrentSession().createCriteria(Category.class).addOrder(Order.asc("id")).list();
+		return (List<Category>)  sessionFactory.getCurrentSession().createCriteria(Category.class).addOrder(Order.asc("id")).list();
 	}
 
 }
