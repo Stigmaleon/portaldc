@@ -4,8 +4,8 @@ import java.util.List;
 
 import javax.persistence.*;
 
-import org.codehaus.jackson.annotate.JsonIgnore;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.portaldc.api.model.Identificator;
 import com.portaldc.api.model.user.User;
 
