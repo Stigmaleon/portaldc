@@ -1,0 +1,12 @@
+version: '2'
+services:
+    portaldc-postgresql:
+        container_name: portaldc-postgresql
+        image: postgres:9.5.1
+        # volumes:
+        #     - ~/volumes/jhipster/portaldc/postgresql/:/var/lib/postgresql/
+        environment:
+            - POSTGRES_USER=portaldc
+            - POSTGRES_PASSWORD=
+        ports:
+            - 5432:5432
