@@ -1,0 +1,23 @@
+{
+    "portaldcApp": {
+        "film" : {
+            "home": {
+                "title": "Films",
+                "createLabel": "Создать новый Film",
+                "createOrEditLabel": "Создать или отредактировать Film",
+                "search": "Найти Film"
+            },
+            "created": "Новый Film создан с идентификатором {{ param }}",
+            "updated": "Film обновлен с идентификатором {{ param }}",
+            "deleted": "Film удален с идентификатором {{ param }}",
+            "delete": {
+                "question": "Вы уверены что хотите удалить Film {{ id }}?"
+            },
+            "detail": {
+                "title": "Film"
+            },
+            "name": "Name",
+            "year": "Year"
+        }
+    }
+}

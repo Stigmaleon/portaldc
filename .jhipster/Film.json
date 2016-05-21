@@ -1,0 +1,18 @@
+{
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "year",
+            "fieldType": "LocalDate"
+        }
+    ],
+    "changelogDate": "20160521205846",
+    "dto": "mapstruct",
+    "service": "serviceImpl",
+    "entityTableName": "film",
+    "pagination": "pagination"
+}
