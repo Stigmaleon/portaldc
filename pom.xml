@@ -523,7 +523,7 @@
                     <url>jdbc:postgresql://localhost:5432/portaldc</url>
                     <defaultSchemaName></defaultSchemaName>
                     <username>portaldc</username>
-                    <password></password>
+                    <password>portaldc</password>
                     <referenceUrl>hibernate:spring:com.portaldc.domain?dialect=org.hibernate.dialect.PostgreSQL82Dialect&amp;hibernate.ejb.naming_strategy=org.springframework.boot.orm.jpa.hibernate.SpringNamingStrategy</referenceUrl>
                     <verbose>true</verbose>
                     <logging>debug</logging>
