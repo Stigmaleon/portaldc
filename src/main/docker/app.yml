@@ -1,0 +1,15 @@
+version: '2'
+services:
+    portaldc-app:
+        image: portaldc
+        external_links:
+            - portaldc-postgresql:postgresql
+        environment:
+            - SPRING_PROFILES_ACTIVE=prod
+            - SPRING_DATASOURCE_URL=jdbc:postgresql://postgresql:5432/portaldc
+        ports:
+            - 8080:8080
+    portaldc-postgresql:
+        extends:
+            file: postgresql.yml
+            service: portaldc-postgresql
