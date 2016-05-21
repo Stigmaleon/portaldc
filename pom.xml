@@ -5,7 +5,7 @@
     <parent>
         <artifactId>spring-boot-starter-parent</artifactId>
         <groupId>org.springframework.boot</groupId>
-        <version>1.3.3.RELEASE</version>
+        <version>1.3.5.RELEASE</version>
         <relativePath/>
     </parent>
 
@@ -15,29 +15,17 @@
     <packaging>war</packaging>
     <name>portaldc</name>
 
-    <repositories>
-        <repository>
-            <id>spring-milestones</id>
-            <url>http://repo.spring.io/milestone</url>
-        </repository>
-    </repositories>
-    <pluginRepositories>
-        <pluginRepository>
-            <id>spring-milestones</id>
-            <url>http://repo.spring.io/milestone</url>
-        </pluginRepository>
-    </pluginRepositories>
-
     <prerequisites>
         <maven>3.0.0</maven>
     </prerequisites>
 
     <properties>
-        <hikaricp.version>2.4.3</hikaricp.version>
+        <hikaricp.version>2.4.6</hikaricp.version>
         <assertj-core.version>3.3.0</assertj-core.version>
         <awaitility.version>1.7.0</awaitility.version>
         <commons-io.version>2.4</commons-io.version>
         <commons-lang.version>2.6</commons-lang.version>
+        <frontend-maven-plugin.version>1.0</frontend-maven-plugin.version>
         <hibernate.version>4.3.11.Final</hibernate.version>
         <java.version>1.8</java.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>
@@ -55,7 +43,7 @@
         <logstash-logback-encoder.version>4.6</logstash-logback-encoder.version>
         <postgresql.version>9.4-1203-jdbc42</postgresql.version>
         <run.addResources>false</run.addResources>
-        <spring-security.version>4.0.4.RELEASE</spring-security.version>
+        <spring-security.version>4.1.0.RELEASE</spring-security.version>
         <springfox.version>2.4.0</springfox.version>
         <!-- Sonar properties -->
         <project.testresult.directory>${project.build.directory}/test-results</project.testresult.directory>
@@ -73,6 +61,7 @@
         <sonar.surefire.reportsPath>${project.testresult.directory}/surefire-reports</sonar.surefire.reportsPath>
         <sonar.tests>${project.basedir}/src/test/</sonar.tests>
     </properties>
+
 
     <dependencies>
         <dependency>
@@ -121,7 +110,6 @@
         <dependency>
             <groupId>com.fasterxml.jackson.datatype</groupId>
             <artifactId>jackson-datatype-hibernate4</artifactId>
-            <version>${jackson.version}</version>
         </dependency>
         <dependency>
             <groupId>com.fasterxml.jackson.datatype</groupId>
@@ -249,7 +237,6 @@
         <dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
-            <version>${postgresql.version}</version>
         </dependency>
         <dependency>
             <groupId>org.mapstruct</groupId>
@@ -563,7 +550,7 @@
             <plugin>
                 <groupId>com.spotify</groupId>
                 <artifactId>docker-maven-plugin</artifactId>
-                <version>0.4.1</version>
+                <version>0.4.5</version>
                 <configuration>
                     <imageName>portaldc</imageName>
                     <dockerDirectory>src/main/docker</dockerDirectory>
@@ -599,7 +586,7 @@
                                             jacoco-maven-plugin
                                         </artifactId>
                                         <versionRange>
-                                            [0.7.4,)
+                                            ${jacoco-maven-plugin.version}
                                         </versionRange>
                                         <goals>
                                             <goal>prepare-agent</goal>
@@ -611,15 +598,18 @@
                                 </pluginExecution>
                                 <pluginExecution>
                                     <pluginExecutionFilter>
-                                        <groupId>com.github.trecloux</groupId>
+                                        <groupId>com.github.eirslett</groupId>
                                         <artifactId>
-                                            yeoman-maven-plugin
+                                            frontend-maven-plugin
                                         </artifactId>
                                         <versionRange>
-                                            [0.5,)
+                                            ${frontend-maven-plugin.version}
                                         </versionRange>
                                         <goals>
-                                            <goal>build</goal>
+                                            <goal>install-node-and-npm</goal>
+                                            <goal>npm</goal>
+                                            <goal>bower</goal>
+                                            <goal>gulp</goal>
                                         </goals>
                                     </pluginExecutionFilter>
                                     <action>
@@ -679,25 +669,58 @@
             <build>
                 <plugins>
                     <plugin>
-                        <groupId>com.github.trecloux</groupId>
-                        <artifactId>yeoman-maven-plugin</artifactId>
-                        <version>0.5</version>
+                        <groupId>com.github.eirslett</groupId>
+                        <artifactId>frontend-maven-plugin</artifactId>
+                        <version>1.0</version>
                         <executions>
                             <execution>
-                                <id>run-frontend-build</id>
-                                <phase>generate-resources</phase>
+                                <id>install node and npm</id>
                                 <goals>
-                                    <goal>build</goal>
+                                    <goal>install-node-and-npm</goal>
                                 </goals>
                                 <configuration>
-                                    <buildTool>gulp</buildTool>
-                                    <buildArgs>build --no-notification</buildArgs>
+                                    <nodeVersion>v4.4.3</nodeVersion>
+                                    <npmVersion>3.8.3</npmVersion>
+                                </configuration>
+                            </execution>
+                            <execution>
+                                <id>npm install</id>
+                                <goals>
+                                    <goal>npm</goal>
+                                </goals>
+                                <configuration>
+                                    <arguments>install</arguments>
+                                </configuration>
+                            </execution>
+                            <execution>
+                                <id>bower install</id>
+                                <goals>
+                                    <goal>bower</goal>
+                                </goals>
+                                <configuration>
+                                    <arguments>install --no-color</arguments>
+                                </configuration>
+                            </execution>
+                            <execution>
+                                <id>gulp build</id>
+                                <goals>
+                                    <goal>gulp</goal>
+                                </goals>
+                                <configuration>
+                                    <arguments>build --no-notification</arguments>
+                                </configuration>
+                            </execution>
+                            <execution>
+                                <id>gulp test</id>
+                                <goals>
+                                    <goal>gulp</goal>
+                                </goals>
+                                <phase>test</phase>
+                                <configuration>
+                                    <arguments>test --no-notification</arguments>
                                 </configuration>
                             </execution>
                         </executions>
-                        <configuration>
-                            <yeomanProjectDirectory>${project.basedir}</yeomanProjectDirectory>
-                        </configuration>
                     </plugin>
                     <plugin>
                         <artifactId>maven-clean-plugin</artifactId>
@@ -706,9 +729,6 @@
                             <filesets>
                                 <fileset>
                                     <directory>target/www/</directory>
-                                </fileset>
-                                <fileset>
-                                    <directory>node_modules</directory>
                                 </fileset>
                             </filesets>
                         </configuration>

@@ -14,7 +14,6 @@ public class FilmDTO implements Serializable {
 
     private String name;
 
-
     private LocalDate year;
 
 

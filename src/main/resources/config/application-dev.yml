@@ -48,6 +48,10 @@ server:
 # ===================================================================
 
 jhipster:
+    security:
+        rememberMe:
+            # security key (this key should be unique for your application, and kept secret)
+            key: aac79a13c7e637e887281e158d5f85c1e80cb528
     mail: # specific JHipster mail property, for standard properties see MailProperties
         from: portaldc@localhost
     metrics: # DropWizard Metrics configuration, used by MetricsConfiguration
@@ -61,7 +65,7 @@ jhipster:
             host: localhost
             port: 2003
             prefix: portaldc
-        logs: # report metrics in the logs
+        logs: # Reports Dropwizard metrics in the logs
             enabled: false
             reportFrequency: 60 # in seconds
     logging:
@@ -70,3 +74,5 @@ jhipster:
             host: localhost
             port: 5000
             queueSize: 512
+    swagger: # swagger is enabled. It can be disabled by pasing 'no-swagger' profile at run time as well
+        enabled: true

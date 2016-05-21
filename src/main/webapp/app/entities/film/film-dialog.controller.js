@@ -5,16 +5,15 @@
         .module('portaldcApp')
         .controller('FilmDialogController', FilmDialogController);
 
-    FilmDialogController.$inject = ['$scope', '$stateParams', '$uibModalInstance', 'entity', 'Film'];
+    FilmDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'entity', 'Film'];
 
-    function FilmDialogController ($scope, $stateParams, $uibModalInstance, entity, Film) {
+    function FilmDialogController ($timeout, $scope, $stateParams, $uibModalInstance, entity, Film) {
         var vm = this;
         vm.film = entity;
-        vm.load = function(id) {
-            Film.get({id : id}, function(result) {
-                vm.film = result;
-            });
-        };
+
+        $timeout(function (){
+            angular.element('.form-group:eq(1)>input').focus();
+        });
 
         var onSaveSuccess = function (result) {
             $scope.$emit('portaldcApp:filmUpdate', result);

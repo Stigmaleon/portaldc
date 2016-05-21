@@ -1,7 +1,6 @@
 package com.portaldc.service;
 
 import com.portaldc.domain.Authority;
-import com.portaldc.domain.PersistentToken;
 import com.portaldc.domain.User;
 import com.portaldc.repository.AuthorityRepository;
 import com.portaldc.repository.PersistentTokenRepository;
@@ -9,8 +8,6 @@ import com.portaldc.repository.UserRepository;
 import com.portaldc.security.SecurityUtils;
 import com.portaldc.service.util.RandomUtil;
 import com.portaldc.web.rest.dto.ManagedUserDTO;
-import java.time.ZonedDateTime;
-import java.time.LocalDate;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -18,6 +15,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+
+import java.time.LocalDate;
 import java.time.ZonedDateTime;
 import javax.inject.Inject;
 import java.util.*;
@@ -118,7 +117,7 @@ public class UserService {
         user.setLastName(managedUserDTO.getLastName());
         user.setEmail(managedUserDTO.getEmail());
         if (managedUserDTO.getLangKey() == null) {
-            user.setLangKey("en"); // default language
+            user.setLangKey("ru"); // default language
         } else {
             user.setLangKey(managedUserDTO.getLangKey());
         }

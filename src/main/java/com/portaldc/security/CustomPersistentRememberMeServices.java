@@ -1,13 +1,11 @@
 package com.portaldc.security;
 
 import com.portaldc.domain.PersistentToken;
-import com.portaldc.domain.User;
 import com.portaldc.repository.PersistentTokenRepository;
 import com.portaldc.repository.UserRepository;
 import com.portaldc.config.JHipsterProperties;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.core.env.Environment;
 import org.springframework.dao.DataAccessException;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.UserDetails;

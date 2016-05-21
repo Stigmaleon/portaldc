@@ -47,7 +47,7 @@
         "messages": {
             "info": {
                 "authenticated": "Если вы хотите <a class=\"alert-link\" href=\"\" ng-click=\"vm.login()\">авторизироваться</a>, вы можете попробовать аккаунты по умолчанию:<br/>- Администратор (логин=\"admin\" и пароль=\"admin\") <br/>- Пользователь (логин=\"user\" и пароль=\"user\").",
-                "register": "У вас нет аккаунта? <a class=\"alert-link\" ui-sref=\"register\">Создать новый аккаунт</a>"
+                "register": "У вас нет аккаунта? <a class=\"alert-link\" href=\"\" ng-click=\"vm.register()\">Создать новый аккаунт</a>"
             },
             "error": {
                 "dontmatch": "Пароль и его подтверждение не совпадают!"
@@ -74,6 +74,9 @@
         },
         "field": {
             "id" : "ID"
+        },
+        "ribbon": {
+            "dev":"Development"
         }
     },
     "entity": {
@@ -84,6 +87,7 @@
             "cancel": "Отмена",
             "delete": "Удалить",
             "edit": "Изменить",
+            "open": "Open",
             "save": "Сохранить",
             "view": "Просмотр"
         },
@@ -109,6 +113,7 @@
     },
     "error": {
         "server.not.reachable": "Сервер не доступен",
+        "url.not.found": "Not found",
         "NotNull": "Поле {{fieldName}} не может быть пустым!",
         "Size": "Поле {{fieldName}} не отвечает требованиям мин/макс.го размера!",
         "userexists": "Имя пользователя уже используется!",
