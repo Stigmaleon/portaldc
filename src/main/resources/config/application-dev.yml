@@ -21,7 +21,7 @@ spring:
         url: jdbc:postgresql://localhost:5432/portaldc
         name:
         username: portaldc
-        password:
+        password: portaldc
     jpa:
         database-platform: com.portaldc.domain.util.FixedPostgreSQL82Dialect
         database: POSTGRESQL
