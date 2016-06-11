@@ -21,7 +21,7 @@ spring:
         url: jdbc:postgresql://localhost:5432/portaldc
         name:
         username: portaldc
-        password: portaldc
+        password:
     jpa:
         database-platform: com.portaldc.domain.util.FixedPostgreSQL82Dialect
         database: POSTGRESQL
@@ -32,6 +32,9 @@ spring:
             hibernate.generate_statistics: true
     mail:
         host: localhost
+        port: 25
+        username:
+        password:
     messages:
         cache-seconds: 1
     thymeleaf:

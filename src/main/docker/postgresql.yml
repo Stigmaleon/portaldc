@@ -2,7 +2,7 @@ version: '2'
 services:
     portaldc-postgresql:
         container_name: portaldc-postgresql
-        image: postgres:9.5.1
+        image: postgres:9.5.2
         # volumes:
         #     - ~/volumes/jhipster/portaldc/postgresql/:/var/lib/postgresql/
         environment:

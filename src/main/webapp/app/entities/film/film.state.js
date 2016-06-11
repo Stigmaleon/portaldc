@@ -71,7 +71,7 @@
                     return $translate.refresh();
                 }],
                 entity: ['$stateParams', 'Film', function($stateParams, Film) {
-                    return Film.get({id : $stateParams.id});
+                    return Film.get({id : $stateParams.id}).$promise;
                 }]
             }
         })
@@ -119,7 +119,7 @@
                     size: 'lg',
                     resolve: {
                         entity: ['Film', function(Film) {
-                            return Film.get({id : $stateParams.id});
+                            return Film.get({id : $stateParams.id}).$promise;
                         }]
                     }
                 }).result.then(function() {
@@ -143,7 +143,7 @@
                     size: 'md',
                     resolve: {
                         entity: ['Film', function(Film) {
-                            return Film.get({id : $stateParams.id});
+                            return Film.get({id : $stateParams.id}).$promise;
                         }]
                     }
                 }).result.then(function() {

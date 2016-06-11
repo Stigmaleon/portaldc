@@ -5,6 +5,8 @@
         .module('portaldcApp')
         .directive('hasAnyAuthority', hasAnyAuthority);
 
+    hasAnyAuthority.$inject = ['Principal'];
+
     function hasAnyAuthority(Principal) {
         var directive = {
             restrict: 'A',

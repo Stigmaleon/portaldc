@@ -9,12 +9,12 @@
 
     function FilmDetailController($scope, $rootScope, $stateParams, entity, Film) {
         var vm = this;
+
         vm.film = entity;
-        
+
         var unsubscribe = $rootScope.$on('portaldcApp:filmUpdate', function(event, result) {
             vm.film = result;
         });
         $scope.$on('$destroy', unsubscribe);
-
     }
 })();
